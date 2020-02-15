@@ -37,4 +37,18 @@ class Asistente extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function grupos(){
+        return $this->belongsToMany('App\Models\Curso',
+            'inscripcion_asistente',
+            'grupo_id','asistente_id');
+    }
+
+    public function datosEstudiante(){
+        return $this->hasOne('App\Models\AsistenteEstudiante','asistente_id','asistente_id');
+    }
+
+    public function datosNoEstudiante(){
+        return $this->hasOne('App\Models\AsistenteNoEstudiante','asistente_id','asistente_id');
+    }
 }
