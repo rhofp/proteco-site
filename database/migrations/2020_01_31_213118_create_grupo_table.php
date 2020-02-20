@@ -16,8 +16,6 @@ class CreateGrupoTable extends Migration
         Schema::create('grupo', function (Blueprint $table) {
             $table->bigIncrements('grupo_id');
             $table->string('turno');
-            $table->date('fecha_inicio');
-            $table->date('fecha_fin');
             $table->time('hora_inicio');
             $table->time('hora_fin');
             $table->string('dias');

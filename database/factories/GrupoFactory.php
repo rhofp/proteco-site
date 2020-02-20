@@ -8,8 +8,6 @@ use Faker\Generator as Faker;
 $factory->define(\App\Models\Grupo::class, function (Faker $faker) {
     return [
         'turno' => $faker->randomElement(['matutino','vespertino']),
-        'fecha_inicio' => $faker->date('Y-m-d'),
-        'fecha_fin' => $faker->date('Y-m-d'),
         'hora_inicio' => $faker->time('H:i:s'),
         'hora_fin' => $faker->time('H:i:s'),
         'dias' => 'Lunes a Viernes',

@@ -19,6 +19,7 @@ class CreateCursoTable extends Migration
             $table->string('nombre');
             $table->integer('horas');
             $table->string('semestre');
+            $table->boolean('activo');
             $table->string('ruta_temario')->nullable();
             $table->string('ruta_imagen')->nullable();
             $table->boolean('es_semestral');
@@ -26,6 +27,8 @@ class CreateCursoTable extends Migration
             $table->decimal('precio_estudiante_unam');
             $table->decimal('precio_estudiante_ext');
             $table->decimal('precio_general');
+            $table->date('fecha_inicio');
+            $table->date('fecha_fin');
             $table->timestamps();
         });
     }

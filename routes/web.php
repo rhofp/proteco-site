@@ -18,10 +18,12 @@ Route::prefix('admin')->group(function() {
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
    }) ;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'GuestController@welcome')->name('welcome');
+
+Route::get('/convocatoria','GuestController@convocatoria')->name('convocatoria');
+
+Route::resource('cursos','CursoController');
