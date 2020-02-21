@@ -1,0 +1,68 @@
+/*// Extra small devices (portrait phones, less than 576px)*/
+/*// No media query for `xs` since this is the default in Bootstrap*/
+
+/*// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) { 
+	
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) { 
+	p{
+		font-size: 1rem;
+	}
+	footer p{
+		font-size: .8rem;
+	}
+	main h3{
+		font-family: 'PT Sans', sans-serif;
+		font-size: calc(1rem + .2vw);
+		text-align: center;
+	}
+	h1{
+		font-family: 'Fjalla One', sans-serif;
+		text-align: center;
+		color: #022c43;
+		font-size: calc(1.2rem + 1vw);
+	}
+	
+	.c{
+		width: 80%;
+	}
+	.talleres .card .card-reveal{   
+		padding: 20px;
+		position: absolute;
+		width: 100%;
+		overflow-y: auto;
+		left:0;
+		bottom:17%;
+		height: 83%;
+		z-index: 1;
+		display: none;    
+	}
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+	nav{
+		height: 55px;
+	}
+	.banner2 video{
+		width: 45vw;
+	}
+	.carousel-inner{
+		justify-content: center;
+	}
+}
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+
+	
+
+}
+
+/* SLIDESHOW */
+
+
+/*slide 2*/
