@@ -15,11 +15,11 @@
  *                      ADMIN ROUTES
  * ******************************************************************************/
 
-Route::prefix('admin')->group(function() {
-    Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
-    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
-    Route::get('logout/', 'Auth\AdminLoginController@logout')->name('admin.logout');
-    Route::get('/', 'AdminController@index')->name('admin.dashboard');
+Route::prefix('admin')->name('admin.')->group(function() {
+    Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('login');
+    Route::post('/login', 'Auth\AdminLoginController@login')->name('login.submit');
+    Route::get('logout/', 'Auth\AdminLoginController@logout')->name('logout');
+    Route::get('/', 'AdminController@index')->name('dashboard');
    }) ;
 
 /*******************************************************************************
