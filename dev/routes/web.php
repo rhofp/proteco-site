@@ -11,6 +11,10 @@
 |
 */
 
+/*******************************************************************************
+ *                      ADMIN ROUTES
+ * ******************************************************************************/
+
 Route::prefix('admin')->group(function() {
     Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
@@ -18,12 +22,25 @@ Route::prefix('admin')->group(function() {
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
    }) ;
 
-Auth::routes();
+/*******************************************************************************
+ *                      USER ROUTES
+ * ******************************************************************************/
 
-Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes(['verify' => true]);
+
+Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+
+
+/*******************************************************************************
+ *                      GUEST ROUTES
+ * ******************************************************************************/
 
 Route::get('/', 'GuestController@welcome')->name('welcome');
 
 Route::get('/convocatoria','GuestController@convocatoria')->name('convocatoria');
+
+/*******************************************************************************
+ *                      OTHER ROUTES
+ * ******************************************************************************/
 
 Route::resource('cursos','CursoController');
