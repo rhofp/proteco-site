@@ -1,0 +1,409 @@
+/*BODY*/
+	body {
+		display: flex;
+		min-height: 100vh;
+		flex-direction: column;
+	}
+
+	main {
+		flex: 1 0 auto;
+		margin-top: 55px;
+	}  
+
+/*NAV*/
+	nav{
+		background-color: #022c43;
+		position: fixed !important;
+		z-index: 2000;
+	}
+
+	.navbar-nav .active a{
+		color: #E8C918 !important;
+	}
+
+	.nav-link, .dropdown-menu .dropdown-item{
+		color: white !important;
+		font-family: 'PT Sans', sans-serif;
+	}
+
+	.nav-link:hover, .dropdown-menu .dropdown-item:hover{
+		color: #E8C918 !important;
+		background-color: #022c43;
+	}
+
+	ul .dropdown-menu{
+		background-color: #022c43;
+	}
+
+	#nav-s{
+		width: 250px;
+		border-radius: 0;
+		height: 35px;
+		border-style: none;
+		font-family: 'PT Sans', sans-serif;
+	}
+
+	#but-s{
+		width: 45px;
+		height: 35px;
+		border-radius: 0;
+		background-color: #022c43;
+		border-style: none;
+		border: solid lightgray 1px;
+	}
+
+	#but-s i{
+		color: white;
+	}
+
+	#but-s:hover i{
+		color: #E8C918;
+	}
+
+/*FOOTER*/
+	footer{
+		background-color: #022c43;
+	}
+
+	h6{
+		color: white;
+		font-family: 'PT Sans', sans-serif;
+		text-align: center;
+	}
+
+	.redes{
+		text-align: center;
+	}
+
+	footer p{
+		color: white;
+		font-family: 'PT Sans', sans-serif;
+		color:  #E8C918;
+		text-align: center;
+		font-size: calc(.8rem + .2vw);
+	}
+
+	footer div .row div{
+		text-align: center;
+	}
+
+	footer .container-fluid{
+		text-align: center;
+		background-color: #F4F4F4;
+	}
+
+	footer .container-fluid #aviso{
+		font-size: x-small;
+	}
+
+	footer .container-fluid p{
+		color:  #022c43;
+	}
+
+/*MAIN*/
+	h1{
+		font-family: 'Fjalla One', sans-serif;
+		text-align: center;
+		color: #022c43;
+		font-size: calc(1.6rem + 1vw);
+	}
+
+	main h2{
+		font-family: 'PT Sans', sans-serif;
+		font-size: calc(1rem + .4vw);
+		color: #022c43;
+	}
+	main h3{
+		font-family: 'PT Sans', sans-serif;
+		font-size: calc(1rem + .2vw);
+		text-align: center;
+	}
+
+	p{
+		font-family: 'PT Sans', sans-serif;	
+		text-align: justify;
+		font-size: calc(1rem + .3vw);
+	}
+
+/*INDEX*/
+	.banner h1{
+		font-family: 'Fjalla One', sans-serif;
+		text-align: center;
+		color: #022c43;
+		font-size: calc(1rem + 1vw);
+	}
+	.banner{
+		width: 100%;
+		background-image: url(../img/b4.jpg);
+		background-size: cover;
+	}
+	.banner h1{
+		text-align: left;
+		font-size: calc(1.5rem + 1vw);
+	}
+	#h2banner{
+		color: #022c43;
+	}
+	.banner div a button{
+		font-size: calc(1rem + .3vw);
+		font-family: 'PT Sans', sans-serif;
+		border-radius: 0;
+		background-color:  #E8C918;
+		color: #022c43;
+	}
+	.banner2 h1{
+		color: #E8C918;
+		font-size: calc(1.5rem + 1vw);
+	}
+
+	.banner2 #h2banner{
+		color: white;
+		font-family: 'PT Sans', sans-serif;
+	}
+	.banner2 div a button{
+		font-size: calc(1rem + .3vw);
+		font-family: 'PT Sans', sans-serif;
+		border-radius: 0;
+		background-color:  #145374;
+		color:  white;
+	}
+	.banner2 div a button:hover{
+		font-size: calc(1rem + .3vw);
+		font-family: 'PT Sans', sans-serif;
+		border-radius: 0;
+		background-color:  #145374;
+		color:  #E8C918;
+	}
+	.banner2{
+		background-color: #022c43;
+		text-align: center;
+	}
+	.banner2 video{
+		width: 80vw;
+	}
+	/*slides*/
+		.carousel-control-next,
+		.carousel-control-prev {
+			filter: invert(100%);
+		}
+
+		main .title, .talleres .card-title{
+			text-align: center;
+			font-family: 'PT Sans', sans-serif;
+			font-size: calc(1.2em + .3vw);
+			font-weight: bolder;
+		}
+		.show{
+			margin-left: 20px;
+		}
+		.card-car .card-text, .talleres .card-text{
+			font-size: calc(.8em + .3vw);
+			font-family: 'PT Sans', sans-serif;
+			text-align: left;
+		}
+		.card-car .card-text span, .talleres .card-text span{
+			font-size: calc(.8em + .3vw);
+			font-weight: bolder;
+		}
+		.card-link:hover{
+			text-decoration: underline;
+		}
+		.card-link i:hover{
+			text-decoration: underline;
+		}
+		.card .card-reveal{   
+			padding: 20px;
+			position: absolute;
+			width: 100%;
+			overflow-y: auto;
+			left:0;
+			bottom:18%;
+			height: 82%;
+			z-index: 1;
+			display: none;    
+		}
+		.card-body{
+			padding-bottom: 0;
+		}
+		.card-footer{
+			background-color: white;
+			height: 7%;
+		}
+	.jumbotron{
+		padding-top: 0;
+	}
+
+	.jumbotron h5{
+		font-family: 'PT Sans', sans-serif;	
+		text-align: justify;
+		font-size: calc(.9rem + .3vw);
+		line-height: 25px;
+	}
+
+	.tec img{
+		width: 12rem;
+	}
+
+	.talleres{
+		margin: 0 auto;
+	}
+
+	.c{
+		width: 50%;
+	}
+
+/*CONVOCATORIA*/
+	.bann {
+		width: 100%;
+		background-color:  #022c43;
+		/*border-top: solid;*/
+		color: #E9ECEF;
+		/*border-width: 1ch;*/
+	}
+
+	.logoProt{
+		width: 100%;	
+	}
+
+	.logoUnam{
+		width: 100%;
+		
+	}
+
+	.prog0{
+		color: #E8C918;
+	}
+
+	.prog1{
+		margin-top: 6vh;
+		color: white;
+	}
+
+
+	.data ul{
+		list-style: none;
+	}
+
+	.yellow {
+		
+		border-top: solid #E8C918;
+	}
+
+	.data button
+	{
+		width:60%;
+
+	}
+
+	button .flecha{
+		position: relative;
+		right: 10%;
+		width: calc(1rem + 0.5vw);
+		
+	}
+		
+	.btn-convocatoria{
+		border-style: solid;
+		border-color: #022c43;
+	}
+	
+	.btn-outline-warning{
+		border-color: #022c43 !important;
+		color: #022c43 !important;
+		border-width: 2px !important;
+		font-size: calc(.8em + .3vw) !important;
+	}
+
+/*INICIO SESIÓN*/
+	.banner22{
+		background-color: #022c43;
+		padding-top: 40vh;
+		text-align: center;
+	}
+	.bodyI{
+		padding: 8vh 5vw;
+	}
+	.fInicio input, .fInicio select, .bodyI .modal input{
+		border-style: none;
+		border-bottom-style: solid;
+		font-family: 'PT Sans', sans-serif;	
+		font-size: calc(.7rem + .3vw);
+	}
+	.fInicio label{
+		font-family: 'PT Sans', sans-serif;	
+		font-size: calc(.7rem + .3vw);
+	}
+	.fInicio button{
+		width: 100%;
+		font-family: 'PT Sans', sans-serif;	
+		font-size: calc(.7rem + .3vw);
+	}
+/*REGISTRO*/
+	.bodyR{
+		padding: 8vh 5vw;
+	}
+	.fInicio small{
+		font-family: 'PT Sans', sans-serif;	
+		display: block;
+	}
+	.bodyR h5, .bodyI h5{
+		font-family: 'PT Sans', sans-serif;	
+		text-align: center;
+		font-size: calc(1.2rem + .3vw);
+		font-weight: bold;
+	}
+
+
+/*CARRITO*/
+	.bann-carrito{
+		width: 100%;
+		background-color:  #022c43;
+	}
+	.bann-carrito h1{
+		color: #E8C918;
+		font-size: calc(1.5rem + .6vw);
+	}
+	.basura{
+		width: 50%;
+	}
+	.basura:hover{
+		animation-name: bote;
+		animation-duration: 3s;
+		transform: scale(1.2);
+	}
+	.infoP h2{
+		font-family: 'Fjalla One', sans-serif;
+		font-size: calc(1.2rem + .4vw);
+		color: #022c43;
+		text-align: center;
+	}
+	.infoP h5{
+		font-family: 'Fjalla One', sans-serif;
+		font-size: calc(1rem + .4vw);
+		color: #022c43;
+		text-align: center;
+	}
+	.infoP ol{
+		line-height: 25px;
+		font-family: 'PT Sans', sans-serif;
+	}
+	.infoP ol li span{
+		font-weight: bold;
+		font-family: 'PT Sans', sans-serif;
+	}
+	.infoP table{
+		width: 70%;
+		font-family: 'PT Sans', sans-serif;
+	}
+	.infoP a{
+		width: 100%;
+		text-align: center;
+	}
+	.infoP button{
+		width: 50%;
+	}
+
+	.logosm{
+		width: 15vw;
+	}
+	
