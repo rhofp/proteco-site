@@ -1,29 +1,28 @@
 # PROTECO
 
 ```shell
-Enero 2020
-Laravel 6.* | PHP 7.4.0 (cli) | Composer version 1.9.1 | npm 6.12.1
+Última actualización: Abril de 2020
 ```
-Es tiempo de renovar el sitio del programa en tecnología en cómputo, para ello se utilizará un framewrok de php llamado laravel. 
+En este repositorio se aloja tanto la documentación como el código de la renovación del sitio de PROTECO.
 
-La entrega de está nueva versión del sitio de PROTECO se hará de manera dosificada, es decir, primero entregaremos los más importante, que son los cursos y su inscripción a ellos.
+La documentación esta basada en el estracto de la norma IEEE-STD-830 contiene:
 
-Esta primera versión no incluirá el directorio de becarios ni el control de asesorías por parte del programa. 
+* Alcance
+* Requerimiento específicos
+* Propuesta de solución
+* Soluciones alternativas
+* Métodología de trabajo
 
+Cabe mencionar que la documentación aun no esta terminada. A medida que se le vayan agregando componentes más delicados se considerará hacer este repositorio privado. 
 
-## Screenshots
+Es importante resaltar que se tienen contemplado realizar este proyecto por fases. A manera de que en cada fase se vaya escalando más el proyecto. Por ejemplo, en la fase 1 no se contempla el desarrollo de la aplicación móvil, sin embargo, ésta podría considerarse en una fase posterior. Todo esto estará perfectamente detallado en la documentación.
 
-![index](img/index.jpg)
+En aspectos más técnicos; se desarrollará todo el sistema con una arquitectura basada en APIs, lo cual nos permitirá crear un sitio web un posteriormente aplicaciones de una manera más sencilla. 
 
-## Installation 
+Las principales tecnologías que usaremos serán Laravel, Node, VueJS, Ajax.
 
-La guía de instalación se puede encontrar en el archivo [INSTALL](INSTALL). 
+Los lenguajes principales serán: php y javascript
 
-## Contributing 
+## Para desarrolladores
 
-La forma de contribuir se explica en [CONTRIBUTING](CONTRIBUTING).
-
-## Licence 
-
-Los términos generales del licenciamiento del proyecto se encuentran en [LICENCE](LICENSE) en caso de 
-requerir mayor información, contactar con el autor.
+En la carpeta `core` encontrarán el proyecto con todas las configuraciones listas para que solo se enfoquen en desarrollar sus módulos asignados.
