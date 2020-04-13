@@ -48,19 +48,19 @@
                             </div>
                         </form>
                     </li>
-                    <li class="nav-item mr-1 ml-3 active">
-                        <a class="nav-link" href="{{url('/')}}">Inicio <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item mr-1 ml-3  ">
-                        <a class="nav-link" href="{{route('cursos.index')}}">Cursos </a>
-                    </li>
-                    <li class="nav-item mr-1 ml-3  ">
-                        <a class="nav-link" href="{{route('convocatoria')}}">Convocatoria</a>
-                    </li>
+                    <!--router-link class="nav-item mr-1 ml-3" tag="li" :to="{name:'root'}"> 
+                        <a href="#" class="nav-link">Inicio</a>
+                    </router-link-->    
+                    <router-link class="nav-item mr-1 ml-3" tag="li" :to="{name:'cursos'}"> 
+                        <a href="#" class="nav-link">Cursos</a>
+                    </router-link>  
+                    <router-link class="nav-item mr-1 ml-3" tag="li" :to="{name:'convocatoria'}"> 
+                        <a href="#" class="nav-link">Convocatoria</a>
+                    </router-link>  
                     @guest
-                        <li class="nav-item mr-1 ml-3 ">
-                            <a class="nav-link" href="{{ route('login') }}">Iniciar sesión</a>
-                        </li>
+                    <router-link class="nav-item mr-1 ml-3" tag="li" :to="{name:'login'}"> 
+                            <a href="#" class="nav-link">Iniciar sesión</a>
+                        </router-link>  
                     @else
                         <li class="nav-item mr-1 ml-3">
                             <a class="nav-link" href="#">
