@@ -9,6 +9,16 @@ class Grupo extends Model
     protected $table = 'grupo';
     protected $primaryKey = 'grupo_id';
 
+    protected $fillable =  [
+        'turno',
+        'hora_inicio',
+        'hora_fin',
+        'dias',
+        'cupo_maximo',
+        'lugar_id',
+        'num_inscritos'
+    ];
+
     public function lugar(){
         return $this->hasOne('App\Models\Lugar','lugar_id','lugar_id');
     }

@@ -11,7 +11,16 @@
 |
 */
 
-Route::view('/{any}','spa')->where('any','.*');
+/*******************************************************************************
+ *                      USER ROUTES
+ * ******************************************************************************/
+
+Auth::routes(['verify' => true]);
+
+//Route::view('/{any}','spa')->where('any','.*');
+Route::any('{all}', function (){
+    return view('spa');
+})->where('all', '^(?!api).*$');
 
 /*******************************************************************************
  *                      ADMIN ROUTES
@@ -23,9 +32,3 @@ Route::prefix('admin')->name('admin.')->group(function() {
     Route::get('logout/', 'Auth\AdminLoginController@logout')->name('logout');
     Route::get('/', 'AdminController@index')->name('dashboard');
    }) ;
-
-/*******************************************************************************
- *                      USER ROUTES
- * ******************************************************************************/
-
-Auth::routes(['verify' => true]);
