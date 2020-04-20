@@ -15,21 +15,27 @@ class CreateCursoTable extends Migration
     {
         Schema::create('curso', function (Blueprint $table) {
             $table->bigIncrements('curso_id');
-            $table->string('nivel')->nullable();
-            $table->string('nombre');
-            $table->integer('horas');
-            $table->string('semestre');
-            $table->boolean('activo');
-            $table->string('ruta_temario')->nullable();
-            $table->string('ruta_imagen')->nullable();
-            $table->boolean('es_semestral');
-            $table->boolean('es_intersemestral');
+            $table->string('nombre',15);
+            $table->string('nombre_imagen')->nullable();
+            $table->string('nombre_temario')->nullable();
+            $table->char('nivel',1)->nullable()
+                ->comment('Los niveles son B:básico, I:intermedio, A:avanzado');
+            $table->char('tipo',1)
+                ->comment('Los tipos son S:semestral, I:intersemestral');
+            $table->boolean('activo')->default(true);
+            $table->integer('num_horas');
             $table->decimal('precio_estudiante_unam');
             $table->decimal('precio_estudiante_ext');
             $table->decimal('precio_general');
             $table->date('fecha_inicio');
             $table->date('fecha_fin');
+            $table->unsignedBigInteger('semestre_id');
             $table->timestamps();
+
+            $table->foreign('semestre_id')
+                ->references('semestre_id')
+                ->on('semestre');
+
         });
     }
 

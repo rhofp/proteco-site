@@ -10,6 +10,6 @@ $factory->define(\App\Models\Lugar::class, function (Faker $faker) {
     $edificio = $faker->randomElement($edificios);
     return [
         'edificio' => $edificio,
-        'salon' => $edificio.$faker->randomDigit.$faker->randomDigit.$faker->randomDigit
+        'salon' => $faker->randomDigit.$faker->randomDigit.$faker->randomDigit
     ];
 });

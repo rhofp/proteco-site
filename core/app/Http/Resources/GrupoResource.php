@@ -15,7 +15,7 @@ class GrupoResource extends JsonResource
     public function toArray($request)
     {
         return [
-            //'grupo_id' => $this->grupo_id,
+            'grupo_id' => $this->grupo_id,
             'turno' => $this->turno,
             'hora_inicio' => $this->hora_inicio,
             'hora_fin' => $this->hora_fin,

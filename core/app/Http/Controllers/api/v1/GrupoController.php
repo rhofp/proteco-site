@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\api\v1;
 
 use App\Http\Requests\GrupoRequest;
 use App\Http\Resources\GrupoResource;
 use App\Models\Curso;
 use App\Models\Grupo;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class GrupoController extends Controller
 {

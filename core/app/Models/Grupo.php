@@ -13,10 +13,10 @@ class Grupo extends Model
         'turno',
         'hora_inicio',
         'hora_fin',
+        'num_inscritos',
         'dias',
         'cupo_maximo',
         'lugar_id',
-        'num_inscritos'
     ];
 
     public function lugar(){

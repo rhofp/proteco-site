@@ -15,12 +15,14 @@ class CreateGrupoTable extends Migration
     {
         Schema::create('grupo', function (Blueprint $table) {
             $table->bigIncrements('grupo_id');
-            $table->string('turno');
+            $table->char('turno',1)
+                ->comment('M:matutino,V:vespertino');
             $table->time('hora_inicio');
             $table->time('hora_fin');
             $table->string('dias');
             $table->unsignedBigInteger('cupo_maximo');
-            $table->unsignedBigInteger('num_inscritos');
+            $table->unsignedBigInteger('num_inscritos')
+                ->default(0);
             $table->unsignedBigInteger('curso_id');
             $table->unsignedBigInteger('lugar_id');
             $table->timestamps();

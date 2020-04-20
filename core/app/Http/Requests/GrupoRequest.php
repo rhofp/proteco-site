@@ -24,13 +24,13 @@ class GrupoRequest extends FormRequest
     public function rules()
     {
         return [
-            'turno' => 'required|string',
+            'turno' => 'required|string|max:1',
             'hora_inicio' => 'required',
             'hora_fin' => 'required',
-            'num_inscritos' => 'required',
-            'dias' => 'required',
+            'num_inscritos' => 'required|integer',
+            'dias' => 'required|string',
             'cupo_maximo' => 'required|integer',
-            'lugar_id' => 'required'
+            'lugar_id' => 'required|integer'
         ];
     }
 }

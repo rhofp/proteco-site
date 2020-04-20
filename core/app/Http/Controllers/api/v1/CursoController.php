@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\api\v1;
 
+use App\Http\Requests\CursoGrupoRequest;
 use App\Http\Requests\CursoRequest;
 use App\Http\Resources\CursoResource;
 use App\Models\Curso;
@@ -31,9 +32,37 @@ class CursoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CursoRequest $request)
+    public function store(CursoGrupoRequest $request)
     {
-        $curso = Curso::create($request->all());
+        $cursoData = $request->only([
+            'nombre',
+            'nombre_imagen',
+            'nombre_temario',
+            'nivel',
+            'tipo',
+            'num_horas',
+            'precio_estudiante_unam',
+            'precio_estudiante_ext',
+            'precio_general',
+            'fecha_inicio',
+            'fecha_fin',
+            'semestre_id'
+        ]);
+
+        $curso = Curso::create($cursoData);
+
+        $grupoData = $request->only([
+            'turno',
+            'hora_inicio',
+            'hora_fin',
+            'num_inscritos',
+            'dias',
+            'cupo_maximo',
+            'lugar_id'
+        ]);
+
+        $curso->grupos()->create($grupoData);
+
         $response = [
             'success' => true,
             'message' => 'El curso fue guardado con éxito',
