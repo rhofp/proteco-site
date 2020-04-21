@@ -6,13 +6,15 @@ import LoginPage from './pages/LoginPage';
 import RegistroPage from './pages/RegistroPage';
 import FaqPage from './pages/FaqPage';
 import ConvocatoriaPage from './pages/ConvocatoriaPage';
+import CartPage from './pages/CartPage';
 
 Vue.use(VueRouter);
 
 export default new VueRouter({
     mode: 'history',
     linkActiveClass: 'active',
-    routes:[{
+    routes:[
+        {
             path: '/',
             component : RootPage,
             name : 'root'
@@ -36,6 +38,12 @@ export default new VueRouter({
             path : '/convocatoria',
             component : ConvocatoriaPage,
             name : 'convocatoria'
-    }]
+        },
+        {
+            path:'/cart',
+            component: CartPage,
+            name: 'cart'
+        }
+    ]
 
 });

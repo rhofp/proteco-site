@@ -61,11 +61,11 @@
                     <router-link class="nav-item mr-1 ml-3" tag="li" :to="{name:'login'}">
                             <a href="#" class="nav-link">Iniciar sesión</a>
                         </router-link>
-                        <li class="nav-item mr-1 ml-3">
+                        <router-link class="nav-item mr-1 ml-3" tag="li" :to="{name:'cart'}">
                             <a class="nav-link" href="#">
                                 <shopping-icon></shopping-icon>
                             </a>
-                        </li>
+                        </router-link>
                     @else
                         <!-- Vista para el usuario -->
                         <li class="nav-item mr-1 ml-3  dropdown">
