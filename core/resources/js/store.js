@@ -5,11 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        cart:JSON.parse(localStorage.getItem('cart')) || []
+        cart: JSON.parse(localStorage.getItem('cart')) || []
     },
     mutations: {
         addToCart(state,curso){
             state.cart.push(curso);
+            localStorage.setItem('cart', JSON.stringify(state.cart));
         },
 
     },

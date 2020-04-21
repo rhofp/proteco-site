@@ -4,16 +4,17 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 import Vue from 'vue';
+import VueIziToast from 'vue-izitoast'
+import "izitoast/dist/css/iziToast.css";
 import router from './router'
 import store from "./store";
 import App from './components/App'
 require('./bootstrap');
-
 window.Vue = require('vue');
 
-//Vue.prototype.$cart = JSON.parse(localStorage.getItem('cart')) || [];
-
 Vue.component('shopping-icon',require('./components/ShoppingIcon.vue').default);
+
+Vue.use(VueIziToast);
 
 const app = new Vue({
     el: '#app',
@@ -21,3 +22,5 @@ const app = new Vue({
     router,
     store
 });
+
+
