@@ -18,20 +18,20 @@
             <div class="col-md-8">
             <form>
                 <div class="form-group">
-                <input class="form-control" placeholder="Buscar curso">
+                <input class="form-control" placeholder="Buscar curso" v-model="cursoABuscar">
                 </div>
             </form>
             </div>
         </div>
     </div>
-    
+
     <div class="container mt-2">
         <div class="row">
-            <div class="col-md-4 mb-3">
+            <div class="col-md-4 mb-3" v-for="curso in filterCursos" :key="curso.curso_id">
                 <div class="card card-car">
                     <img src="img/b101.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Cursos de C</h5>
+                        <h5 class="card-title">{{curso.nombre + " " + nivelCurso(curso.nivel)}}</h5>
                         <p class="card-text m-0"><span>Fecha:</span> 17/02/20 al 21/02/20</p>
                         <p class="card-text mt-1"><span>Horario:</span> 17:00 a 21:00</p>
                         <!-- reveal -->
@@ -50,8 +50,8 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="card-link" title="Agregar al carrito"><i class="material-icons"
-                            title="Agregar al carrito">shopping_cart</i></a>
+                        <a href="" class="card-link" title="Agregar al carrito"><i class="material-icons"
+                            title="Agregar al carrito" v-on:click.prevent="agregarAlCarrito(curso)">shopping_cart</i></a>
                         <a href="#" class="card-link" title="Ver el temario">Temario</a>
                         <span href="" class="show card-link text-right text-primary" data-rel="1"
                             title="Ver detalles del curso">Ver más</span>
@@ -64,6 +64,44 @@
 </template>
 <script>
 export default {
-    name: 'CursosPage'
+    name: 'CursosPage',
+    data(){
+        return {
+            cursos : [],
+            cursoABuscar : '',
+        }
+    },
+    created() {
+        axios.get('/cursos').then( ({data}) => {
+            this.cursos = data.data;
+        });
+    },
+    computed:{
+        filterCursos(){
+            return this.cursos.filter( curso => {
+                return curso.nombre.toLowerCase()
+                    .match(this.cursoABuscar.toLowerCase());
+            });
+        }
+    },
+    methods:{
+        nivelCurso(nivel){
+            return nivel === 'B' ? 'Básico' :
+                nivel ==='I' ? 'Intermedio' :
+                nivel === 'A' ? 'Avanzado' : '';
+        },
+        agregarAlCarrito(curso){
+            //this.$store.state.cart.push(curso);
+            this.$store.commit('addToCart',curso);
+            localStorage.setItem('cart', JSON.stringify(this.$store.state.cart));
+        },
+        cursoEstaEnCarrito(_curso){
+            for (curso of this.$store.state.cart){
+                if (_curso.curso_id === curso.curso_id)
+                    return true
+            }
+            return false
+        }
+    }
 }
 </script>

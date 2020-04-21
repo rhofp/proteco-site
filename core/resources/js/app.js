@@ -5,13 +5,19 @@
  */
 import Vue from 'vue';
 import router from './router'
+import store from "./store";
 import App from './components/App'
 require('./bootstrap');
 
 window.Vue = require('vue');
 
+//Vue.prototype.$cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+Vue.component('shopping-icon',require('./components/ShoppingIcon.vue').default);
+
 const app = new Vue({
     el: '#app',
     components: {App},
-    router
+    router,
+    store
 });

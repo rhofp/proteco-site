@@ -48,25 +48,25 @@
                             </div>
                         </form>
                     </li>
-                    <!--router-link class="nav-item mr-1 ml-3" tag="li" :to="{name:'root'}"> 
+                    <!--router-link class="nav-item mr-1 ml-3" tag="li" :to="{name:'root'}">
                         <a href="#" class="nav-link">Inicio</a>
-                    </router-link-->    
-                    <router-link class="nav-item mr-1 ml-3" tag="li" :to="{name:'cursos'}"> 
+                    </router-link-->
+                    <router-link class="nav-item mr-1 ml-3" tag="li" :to="{name:'cursos'}">
                         <a href="#" class="nav-link">Cursos</a>
-                    </router-link>  
-                    <router-link class="nav-item mr-1 ml-3" tag="li" :to="{name:'convocatoria'}"> 
+                    </router-link>
+                    <router-link class="nav-item mr-1 ml-3" tag="li" :to="{name:'convocatoria'}">
                         <a href="#" class="nav-link">Convocatoria</a>
-                    </router-link>  
+                    </router-link>
                     @guest
-                    <router-link class="nav-item mr-1 ml-3" tag="li" :to="{name:'login'}"> 
+                    <router-link class="nav-item mr-1 ml-3" tag="li" :to="{name:'login'}">
                             <a href="#" class="nav-link">Iniciar sesión</a>
-                        </router-link>  
-                    @else
+                        </router-link>
                         <li class="nav-item mr-1 ml-3">
                             <a class="nav-link" href="#">
-                                <i class="material-icons">shopping_cart</i>
+                                <shopping-icon></shopping-icon>
                             </a>
                         </li>
+                    @else
                         <!-- Vista para el usuario -->
                         <li class="nav-item mr-1 ml-3  dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
