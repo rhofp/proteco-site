@@ -72,7 +72,7 @@ export default {
         }
     },
     created() {
-        axios.get('/cursos').then( ({data}) => {
+        axios.get('/v1/cursos').then( ({data}) => {
             this.cursos = data.data;
         });
     },
@@ -91,16 +91,26 @@ export default {
                 nivel === 'A' ? 'Avanzado' : '';
         },
         agregarAlCarrito(curso){
-            //this.$store.state.cart.push(curso);
-            this.$store.commit('addToCart',curso);
-            localStorage.setItem('cart', JSON.stringify(this.$store.state.cart));
+            if (this.cursoEstaEnCarrito(curso)){
+                this.$store.commit('addToCart',curso);
+                this.$toast.success('El curso se agrego con éxito al carrito', 'Bien',{
+                    icon: "icon-person",
+                    position: "topCenter",
+                });
+            }else {
+                this.$toast.warning('El curso ya se encuentra en el carrito', 'OJO',{
+                    icon: "icon-person",
+                    position: "topCenter",
+                });
+            }
+
         },
         cursoEstaEnCarrito(_curso){
-            for (curso of this.$store.state.cart){
-                if (_curso.curso_id === curso.curso_id)
-                    return true
+            for (const curso of this.$store.state.cart){
+                if ( _curso.curso_id === curso.curso_id)
+                    return false
             }
-            return false
+            return true
         }
     }
 }
