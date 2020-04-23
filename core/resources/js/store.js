@@ -28,6 +28,11 @@ export default new Vuex.Store({
             console.log(state.cart);
             localStorage.setItem('cart', JSON.stringify(state.cart));
         },
+        removeFromCart(state,_curso){
+            state.cart.cursos = state.cart.cursos.filter(curso => {
+                return curso.curso_id !== _curso.curso_id;
+            });
+        }
 
     },
     getters:{

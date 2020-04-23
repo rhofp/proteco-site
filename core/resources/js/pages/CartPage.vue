@@ -2,40 +2,13 @@
     <main class="mb-3">
         <div class="bann-carrito">
             <div class="container pt-md-5 pb-md-4 pt-4 pb-3">
-                <h1>Mis Cursos</h1>
+                <h1>Mi Carrito</h1>
             </div>
         </div>
         <!-- CURSOS PARA MD -->
         <div class="container pt-3 d-none d-lg-block">
             <div class="row">
-                <div class="col-6">
-                    <!-- card -->
-                    <div class="card mb-1">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-3 my-auto">
-                                    <img class="img-fluid" src="img/logo_c.png" alt="">
-                                </div>
-                                <div class="col-6">
-                                    <h3 class=" text-center font-weight-bold">C Básico AM</h3>
-                                    <ul type="none" class="text-left">
-                                        <li>De Lunes a Viernes</li>
-                                        <li>17/02/2020 al 21/02/2020</li>
-                                        <li>17:00:00 a 21:00:00</li>
-                                        <li>Laboratorio IBM</li>
-                                        <li class="font-weight-bold">$1600</li>
-                                    </ul>
-                                </div>
-                                <div class="col-3 my-auto mx-0">
-                                    <a href="">
-                                        <img src="img/icons/basura.png" class="img-fluid basura" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6">
+                <div class="col-6 mb-2" v-for="curso in this.$store.state.cart.cursos" :key="curso.curso_id">
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
@@ -43,123 +16,17 @@
                                     <img class="img-fluid" src="img/logo_c.png" alt="">
                                 </div>
                                 <div class="col-6">
-                                    <h3 class=" text-center font-weight-bold">C Básico AM</h3>
+                                    <h3 class=" text-center font-weight-bold">{{curso.nombre + " " + nivelCurso(curso.nivel)}}</h3>
                                     <ul type="none" class="text-left">
                                         <li>De Lunes a Viernes</li>
                                         <li>17/02/2020 al 21/02/2020</li>
                                         <li>17:00:00 a 21:00:00</li>
                                         <li>Laboratorio IBM</li>
-                                        <li class="font-weight-bold">$1600</li>
+                                        <li class="font-weight-bold">$ {{curso.precio_estudiante_unam}}</li>
                                     </ul>
                                 </div>
                                 <div class="col-3 my-auto mx-0">
-                                    <a href="">
-                                        <img src="img/icons/basura.png" class="img-fluid basura" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-3 my-auto">
-                                    <img class="img-fluid" src="img/logo_c.png" alt="">
-                                </div>
-                                <div class="col-6">
-                                    <h3 class=" text-center font-weight-bold">C Básico AM</h3>
-                                    <ul type="none" class="text-left">
-                                        <li>De Lunes a Viernes</li>
-                                        <li>17/02/2020 al 21/02/2020</li>
-                                        <li>17:00:00 a 21:00:00</li>
-                                        <li>Laboratorio IBM</li>
-                                        <li class="font-weight-bold">$1600</li>
-                                    </ul>
-                                </div>
-                                <div class="col-3 my-auto mx-0">
-                                    <a href="">
-                                        <img src="img/icons/basura.png" class="img-fluid basura" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6">
-                    <!-- card -->
-                    <div class="card mb-1">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-3 my-auto">
-                                    <img class="img-fluid" src="img/logo_c.png" alt="">
-                                </div>
-                                <div class="col-6">
-                                    <h3 class=" text-center font-weight-bold">C Básico AM</h3>
-                                    <ul type="none" class="text-left">
-                                        <li>De Lunes a Viernes</li>
-                                        <li>17/02/2020 al 21/02/2020</li>
-                                        <li>17:00:00 a 21:00:00</li>
-                                        <li>Laboratorio IBM</li>
-                                        <li class="font-weight-bold">$1600</li>
-                                    </ul>
-                                </div>
-                                <div class="col-3 my-auto mx-0">
-                                    <a href="">
-                                        <img src="img/icons/basura.png" class="img-fluid basura" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-3 my-auto">
-                                    <img class="img-fluid" src="img/logo_c.png" alt="">
-                                </div>
-                                <div class="col-6">
-                                    <h3 class=" text-center font-weight-bold">C Básico AM</h3>
-                                    <ul type="none" class="text-left">
-                                        <li>De Lunes a Viernes</li>
-                                        <li>17/02/2020 al 21/02/2020</li>
-                                        <li>17:00:00 a 21:00:00</li>
-                                        <li>Laboratorio IBM</li>
-                                        <li class="font-weight-bold">$1600</li>
-                                    </ul>
-                                </div>
-                                <div class="col-3 my-auto mx-0">
-                                    <a href="">
-                                        <img src="img/icons/basura.png" class="img-fluid basura" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-3 my-auto">
-                                    <img class="img-fluid" src="img/logo_c.png" alt="">
-                                </div>
-                                <div class="col-6">
-                                    <h3 class=" text-center font-weight-bold">C Básico AM</h3>
-                                    <ul type="none" class="text-left">
-                                        <li>De Lunes a Viernes</li>
-                                        <li>17/02/2020 al 21/02/2020</li>
-                                        <li>17:00:00 a 21:00:00</li>
-                                        <li>Laboratorio IBM</li>
-                                        <li class="font-weight-bold">$1600</li>
-                                    </ul>
-                                </div>
-                                <div class="col-3 my-auto mx-0">
-                                    <a href="">
+                                    <a href="" v-on:click.prevent="quitarCurso(curso)">
                                         <img src="img/icons/basura.png" class="img-fluid basura" alt="">
                                     </a>
                                 </div>
@@ -291,15 +158,15 @@
                             <tbody>
                             <tr>
                                 <td>Subtotal</td>
-                                <td>$2400</td>
+                                <td>$ {{this.$store.state.cart.subtotal}}</td>
                             </tr>
                             <tr>
                                 <td>Descuento</td>
-                                <td>$800</td>
+                                <td>$ {{this.$store.state.cart.descuento}}</td>
                             </tr>
                             <tr class="font-weight-bold">
                                 <td>Total</td>
-                                <td>$1600</td>
+                                <td>$ {{this.$store.state.cart.total}}</td>
                             </tr>
                             </tbody>
                         </table>
@@ -371,6 +238,19 @@
 
 <script>
 export default {
-
+    methods: {
+        nivelCurso(nivel) {
+            return nivel === 'B' ? 'Básico' :
+                nivel === 'I' ? 'Intermedio' :
+                    nivel === 'A' ? 'Avanzado' : '';
+        },
+        quitarCurso(curso){
+            this.$store.commit('removeFromCart',curso);
+            this.$toast.success('El curso se quito del carrito', 'Bien',{
+                icon: "icon-person",
+                position: "topCenter",
+            });
+        }
+    }
 }
 </script>

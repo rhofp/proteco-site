@@ -2193,140 +2193,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    nivelCurso: function nivelCurso(nivel) {
+      return nivel === 'B' ? 'Básico' : nivel === 'I' ? 'Intermedio' : nivel === 'A' ? 'Avanzado' : '';
+    },
+    quitarCurso: function quitarCurso(curso) {
+      this.$store.commit('removeFromCart', curso);
+      this.$toast.success('El curso se quito del carrito', 'Bien', {
+        icon: "icon-person",
+        position: "topCenter"
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -7461,7 +7341,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*CARRITO*/\n.bann-carrito[data-v-2f3a4cd8]{\n    width: 100%;\n    background-color:  #022c43;\n}\n.bann-carrito h1[data-v-2f3a4cd8]{\n    color: #E8C918;\n    font-size: calc(1.5rem + .6vw);\n}\n.basura[data-v-2f3a4cd8]{\n    width: 50%;\n}\n.basura[data-v-2f3a4cd8]:hover{\n    -webkit-animation-name: bote;\n            animation-name: bote;\n    -webkit-animation-duration: 3s;\n            animation-duration: 3s;\n    -webkit-transform: scale(1.2);\n            transform: scale(1.2);\n}\n.infoP h2[data-v-2f3a4cd8]{\n    font-family: 'Fjalla One', sans-serif;\n    font-size: calc(1.2rem + .4vw);\n    color: #022c43;\n    text-align: center;\n}\n.infoP h5[data-v-2f3a4cd8]{\n    font-family: 'Fjalla One', sans-serif;\n    font-size: calc(1rem + .4vw);\n    color: #022c43;\n    text-align: center;\n}\n.infoP ol[data-v-2f3a4cd8]{\n    line-height: 25px;\n    font-family: 'PT Sans', sans-serif;\n}\n.infoP ol li span[data-v-2f3a4cd8]{\n    font-weight: bold;\n    font-family: 'PT Sans', sans-serif;\n}\n.infoP table[data-v-2f3a4cd8]{\n    width: 70%;\n    font-family: 'PT Sans', sans-serif;\n}\n.infoP a[data-v-2f3a4cd8]{\n    width: 100%;\n    text-align: center;\n}\n.infoP button[data-v-2f3a4cd8]{\n    width: 50%;\n}\n.logosm[data-v-2f3a4cd8]{\n    width: 15vw;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*CARRITO*/\n.bann-carrito[data-v-2f3a4cd8]{\n    width: 100%;\n    background-color:  #022c43;\n}\n.bann-carrito h1[data-v-2f3a4cd8]{\n    color: #E8C918;\n    font-size: calc(1.5rem + .6vw);\n}\n.basura[data-v-2f3a4cd8]{\n    width: 50%;\n}\n.basura[data-v-2f3a4cd8]:hover{\n    -webkit-animation-name: bote;\n            animation-name: bote;\n    -webkit-animation-duration: 3s;\n            animation-duration: 3s;\n    -webkit-transform: scale(1.2);\n            transform: scale(1.2);\n}\n.infoP h2[data-v-2f3a4cd8]{\n    font-family: 'Fjalla One', sans-serif;\n    font-size: calc(1.2rem + .4vw);\n    color: #022c43;\n    text-align: center;\n}\n.infoP h5[data-v-2f3a4cd8]{\n    font-family: 'Fjalla One', sans-serif;\n    font-size: calc(1rem + .4vw);\n    color: #022c43;\n    text-align: center;\n}\n.infoP ol[data-v-2f3a4cd8]{\n    line-height: 25px;\n    font-family: 'PT Sans', sans-serif;\n}\n.infoP ol li span[data-v-2f3a4cd8]{\n    font-weight: bold;\n    font-family: 'PT Sans', sans-serif;\n}\n.infoP table[data-v-2f3a4cd8]{\n    width: 70%;\n    font-family: 'PT Sans', sans-serif;\n}\n.infoP a[data-v-2f3a4cd8]{\n    width: 100%;\n    text-align: center;\n}\n.infoP button[data-v-2f3a4cd8]{\n    width: 50%;\n}\n.logosm[data-v-2f3a4cd8]{\n    width: 15vw;\n}\n", ""]);
 
 // exports
 
@@ -40251,38 +40131,196 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("main", { staticClass: "mb-3" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "container pt-3 d-none d-lg-block" }, [
+      _c(
+        "div",
+        { staticClass: "row" },
+        _vm._l(this.$store.state.cart.cursos, function(curso) {
+          return _c("div", { key: curso.curso_id, staticClass: "col-6 mb-2" }, [
+            _c("div", { staticClass: "card" }, [
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "row" }, [
+                  _vm._m(1, true),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-6" }, [
+                    _c("h3", { staticClass: " text-center font-weight-bold" }, [
+                      _vm._v(
+                        _vm._s(curso.nombre + " " + _vm.nivelCurso(curso.nivel))
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "ul",
+                      { staticClass: "text-left", attrs: { type: "none" } },
+                      [
+                        _c("li", [_vm._v("De Lunes a Viernes")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("17/02/2020 al 21/02/2020")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("17:00:00 a 21:00:00")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("Laboratorio IBM")]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "font-weight-bold" }, [
+                          _vm._v("$ " + _vm._s(curso.precio_estudiante_unam))
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-3 my-auto mx-0" }, [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.quitarCurso(curso)
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "img-fluid basura",
+                          attrs: { src: "img/icons/basura.png", alt: "" }
+                        })
+                      ]
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ])
+        }),
+        0
+      )
+    ]),
+    _vm._v(" "),
+    _vm._m(2),
+    _vm._v(" "),
+    _c("div", { staticClass: " mt-4 pt-3 jumbotron infoP" }, [
+      _c("h2", [_vm._v("Información del pago")]),
+      _c("br"),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _vm._m(3),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-12 col-md-6 mt-3 mt-md-0" }, [
+          _c("div", { staticClass: "card pt-3" }, [
+            _c("table", { staticClass: "table table-hover mx-auto" }, [
+              _c("tbody", [
+                _c("tr", [
+                  _c("td", [_vm._v("Subtotal")]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v("$ " + _vm._s(this.$store.state.cart.subtotal))
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td", [_vm._v("Descuento")]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v("$ " + _vm._s(this.$store.state.cart.descuento))
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("tr", { staticClass: "font-weight-bold" }, [
+                  _c("td", [_vm._v("Total")]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v("$ " + _vm._s(this.$store.state.cart.total))
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(4),
+            _vm._v(" "),
+            _c("br")
+          ])
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("main", { staticClass: "mb-3" }, [
-      _c("div", { staticClass: "bann-carrito" }, [
-        _c("div", { staticClass: "container pt-md-5 pb-md-4 pt-4 pb-3" }, [
-          _c("h1", [_vm._v("Mis Cursos")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "container pt-3 d-none d-lg-block" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-6" }, [
-            _c("div", { staticClass: "card mb-1" }, [
+    return _c("div", { staticClass: "bann-carrito" }, [
+      _c("div", { staticClass: "container pt-md-5 pb-md-4 pt-4 pb-3" }, [
+        _c("h1", [_vm._v("Mi Carrito")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-3 my-auto" }, [
+      _c("img", {
+        staticClass: "img-fluid",
+        attrs: { src: "img/logo_c.png", alt: "" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container  d-lg-none" }, [
+      _c("div", { staticClass: "mt-3", attrs: { id: "accordion" } }, [
+        _c("div", { staticClass: "card", attrs: { id: "headingOne" } }, [
+          _c(
+            "div",
+            {
+              staticClass: "card-header text-center",
+              attrs: {
+                "data-toggle": "collapse",
+                "data-target": "#collapseOne",
+                "aria-expanded": "true",
+                "aria-controls": "collapseOne"
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "img-fluid logosm d-inline",
+                attrs: { src: "img/logo_c.png", alt: "" }
+              }),
+              _vm._v(" "),
+              _c(
+                "h3",
+                {
+                  staticClass:
+                    " text-center font-weight-bold d-inline pl-5 text-dark"
+                },
+                [_vm._v("C Básico AM")]
+              ),
+              _vm._v(" "),
+              _c("span", { staticClass: "pl-5 text-dark" }, [_vm._v("$800")])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "collapse show",
+              attrs: {
+                id: "collapseOne",
+                "aria-labelledby": "headingOne",
+                "data-parent": "#accordion"
+              }
+            },
+            [
               _c("div", { staticClass: "card-body" }, [
                 _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-3 my-auto" }, [
-                    _c("img", {
-                      staticClass: "img-fluid",
-                      attrs: { src: "img/logo_c.png", alt: "" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-6" }, [
-                    _c("h3", { staticClass: " text-center font-weight-bold" }, [
-                      _vm._v("C Básico AM")
-                    ]),
-                    _vm._v(" "),
+                  _c("div", { staticClass: "col-8" }, [
                     _c(
                       "ul",
                       { staticClass: "text-left", attrs: { type: "none" } },
@@ -40302,7 +40340,7 @@ var staticRenderFns = [
                     )
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-3 my-auto mx-0" }, [
+                  _c("div", { staticClass: "col-4" }, [
                     _c("a", { attrs: { href: "" } }, [
                       _c("img", {
                         staticClass: "img-fluid basura",
@@ -40312,583 +40350,234 @@ var staticRenderFns = [
                   ])
                 ])
               ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-6" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("div", { staticClass: "card-body" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-3 my-auto" }, [
-                    _c("img", {
-                      staticClass: "img-fluid",
-                      attrs: { src: "img/logo_c.png", alt: "" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-6" }, [
-                    _c("h3", { staticClass: " text-center font-weight-bold" }, [
-                      _vm._v("C Básico AM")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "ul",
-                      { staticClass: "text-left", attrs: { type: "none" } },
-                      [
-                        _c("li", [_vm._v("De Lunes a Viernes")]),
-                        _vm._v(" "),
-                        _c("li", [_vm._v("17/02/2020 al 21/02/2020")]),
-                        _vm._v(" "),
-                        _c("li", [_vm._v("17:00:00 a 21:00:00")]),
-                        _vm._v(" "),
-                        _c("li", [_vm._v("Laboratorio IBM")]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "font-weight-bold" }, [
-                          _vm._v("$1600")
-                        ])
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-3 my-auto mx-0" }, [
-                    _c("a", { attrs: { href: "" } }, [
-                      _c("img", {
-                        staticClass: "img-fluid basura",
-                        attrs: { src: "img/icons/basura.png", alt: "" }
-                      })
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-6" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("div", { staticClass: "card-body" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-3 my-auto" }, [
-                    _c("img", {
-                      staticClass: "img-fluid",
-                      attrs: { src: "img/logo_c.png", alt: "" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-6" }, [
-                    _c("h3", { staticClass: " text-center font-weight-bold" }, [
-                      _vm._v("C Básico AM")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "ul",
-                      { staticClass: "text-left", attrs: { type: "none" } },
-                      [
-                        _c("li", [_vm._v("De Lunes a Viernes")]),
-                        _vm._v(" "),
-                        _c("li", [_vm._v("17/02/2020 al 21/02/2020")]),
-                        _vm._v(" "),
-                        _c("li", [_vm._v("17:00:00 a 21:00:00")]),
-                        _vm._v(" "),
-                        _c("li", [_vm._v("Laboratorio IBM")]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "font-weight-bold" }, [
-                          _vm._v("$1600")
-                        ])
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-3 my-auto mx-0" }, [
-                    _c("a", { attrs: { href: "" } }, [
-                      _c("img", {
-                        staticClass: "img-fluid basura",
-                        attrs: { src: "img/icons/basura.png", alt: "" }
-                      })
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-6" }, [
-            _c("div", { staticClass: "card mb-1" }, [
-              _c("div", { staticClass: "card-body" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-3 my-auto" }, [
-                    _c("img", {
-                      staticClass: "img-fluid",
-                      attrs: { src: "img/logo_c.png", alt: "" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-6" }, [
-                    _c("h3", { staticClass: " text-center font-weight-bold" }, [
-                      _vm._v("C Básico AM")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "ul",
-                      { staticClass: "text-left", attrs: { type: "none" } },
-                      [
-                        _c("li", [_vm._v("De Lunes a Viernes")]),
-                        _vm._v(" "),
-                        _c("li", [_vm._v("17/02/2020 al 21/02/2020")]),
-                        _vm._v(" "),
-                        _c("li", [_vm._v("17:00:00 a 21:00:00")]),
-                        _vm._v(" "),
-                        _c("li", [_vm._v("Laboratorio IBM")]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "font-weight-bold" }, [
-                          _vm._v("$1600")
-                        ])
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-3 my-auto mx-0" }, [
-                    _c("a", { attrs: { href: "" } }, [
-                      _c("img", {
-                        staticClass: "img-fluid basura",
-                        attrs: { src: "img/icons/basura.png", alt: "" }
-                      })
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-6" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("div", { staticClass: "card-body" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-3 my-auto" }, [
-                    _c("img", {
-                      staticClass: "img-fluid",
-                      attrs: { src: "img/logo_c.png", alt: "" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-6" }, [
-                    _c("h3", { staticClass: " text-center font-weight-bold" }, [
-                      _vm._v("C Básico AM")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "ul",
-                      { staticClass: "text-left", attrs: { type: "none" } },
-                      [
-                        _c("li", [_vm._v("De Lunes a Viernes")]),
-                        _vm._v(" "),
-                        _c("li", [_vm._v("17/02/2020 al 21/02/2020")]),
-                        _vm._v(" "),
-                        _c("li", [_vm._v("17:00:00 a 21:00:00")]),
-                        _vm._v(" "),
-                        _c("li", [_vm._v("Laboratorio IBM")]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "font-weight-bold" }, [
-                          _vm._v("$1600")
-                        ])
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-3 my-auto mx-0" }, [
-                    _c("a", { attrs: { href: "" } }, [
-                      _c("img", {
-                        staticClass: "img-fluid basura",
-                        attrs: { src: "img/icons/basura.png", alt: "" }
-                      })
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-6" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("div", { staticClass: "card-body" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-3 my-auto" }, [
-                    _c("img", {
-                      staticClass: "img-fluid",
-                      attrs: { src: "img/logo_c.png", alt: "" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-6" }, [
-                    _c("h3", { staticClass: " text-center font-weight-bold" }, [
-                      _vm._v("C Básico AM")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "ul",
-                      { staticClass: "text-left", attrs: { type: "none" } },
-                      [
-                        _c("li", [_vm._v("De Lunes a Viernes")]),
-                        _vm._v(" "),
-                        _c("li", [_vm._v("17/02/2020 al 21/02/2020")]),
-                        _vm._v(" "),
-                        _c("li", [_vm._v("17:00:00 a 21:00:00")]),
-                        _vm._v(" "),
-                        _c("li", [_vm._v("Laboratorio IBM")]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "font-weight-bold" }, [
-                          _vm._v("$1600")
-                        ])
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-3 my-auto mx-0" }, [
-                    _c("a", { attrs: { href: "" } }, [
-                      _c("img", {
-                        staticClass: "img-fluid basura",
-                        attrs: { src: "img/icons/basura.png", alt: "" }
-                      })
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "container  d-lg-none" }, [
-        _c("div", { staticClass: "mt-3", attrs: { id: "accordion" } }, [
-          _c("div", { staticClass: "card", attrs: { id: "headingOne" } }, [
-            _c(
-              "div",
-              {
-                staticClass: "card-header text-center",
-                attrs: {
-                  "data-toggle": "collapse",
-                  "data-target": "#collapseOne",
-                  "aria-expanded": "true",
-                  "aria-controls": "collapseOne"
-                }
-              },
-              [
-                _c("img", {
-                  staticClass: "img-fluid logosm d-inline",
-                  attrs: { src: "img/logo_c.png", alt: "" }
-                }),
-                _vm._v(" "),
-                _c(
-                  "h3",
-                  {
-                    staticClass:
-                      " text-center font-weight-bold d-inline pl-5 text-dark"
-                  },
-                  [_vm._v("C Básico AM")]
-                ),
-                _vm._v(" "),
-                _c("span", { staticClass: "pl-5 text-dark" }, [_vm._v("$800")])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "collapse show",
-                attrs: {
-                  id: "collapseOne",
-                  "aria-labelledby": "headingOne",
-                  "data-parent": "#accordion"
-                }
-              },
-              [
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-8" }, [
-                      _c(
-                        "ul",
-                        { staticClass: "text-left", attrs: { type: "none" } },
-                        [
-                          _c("li", [_vm._v("De Lunes a Viernes")]),
-                          _vm._v(" "),
-                          _c("li", [_vm._v("17/02/2020 al 21/02/2020")]),
-                          _vm._v(" "),
-                          _c("li", [_vm._v("17:00:00 a 21:00:00")]),
-                          _vm._v(" "),
-                          _c("li", [_vm._v("Laboratorio IBM")]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "font-weight-bold" }, [
-                            _vm._v("$1600")
-                          ])
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-4" }, [
-                      _c("a", { attrs: { href: "" } }, [
-                        _c("img", {
-                          staticClass: "img-fluid basura",
-                          attrs: { src: "img/icons/basura.png", alt: "" }
-                        })
-                      ])
-                    ])
-                  ])
-                ])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "card", attrs: { id: "headingTwo" } }, [
-            _c(
-              "div",
-              {
-                staticClass: "card-header text-center",
-                attrs: {
-                  "data-toggle": "collapse",
-                  "data-target": "#collapseTwo",
-                  "aria-expanded": "true",
-                  "aria-controls": "collapseTwo"
-                }
-              },
-              [
-                _c("img", {
-                  staticClass: "img-fluid logosm d-inline",
-                  attrs: { src: "img/logo_c.png", alt: "" }
-                }),
-                _vm._v(" "),
-                _c(
-                  "h3",
-                  {
-                    staticClass:
-                      " text-center font-weight-bold d-inline pl-5 text-dark"
-                  },
-                  [_vm._v("C Básico AM")]
-                ),
-                _vm._v(" "),
-                _c("span", { staticClass: "pl-5 text-dark" }, [_vm._v("$800")])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "collapse show",
-                attrs: {
-                  id: "collapseTwo",
-                  "aria-labelledby": "headingTwo",
-                  "data-parent": "#accordion"
-                }
-              },
-              [
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-8" }, [
-                      _c(
-                        "ul",
-                        { staticClass: "text-left", attrs: { type: "none" } },
-                        [
-                          _c("li", [_vm._v("De Lunes a Viernes")]),
-                          _vm._v(" "),
-                          _c("li", [_vm._v("17/02/2020 al 21/02/2020")]),
-                          _vm._v(" "),
-                          _c("li", [_vm._v("17:00:00 a 21:00:00")]),
-                          _vm._v(" "),
-                          _c("li", [_vm._v("Laboratorio IBM")]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "font-weight-bold" }, [
-                            _vm._v("$1600")
-                          ])
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-4" }, [
-                      _c("a", { attrs: { href: "" } }, [
-                        _c("img", {
-                          staticClass: "img-fluid basura",
-                          attrs: { src: "img/icons/basura.png", alt: "" }
-                        })
-                      ])
-                    ])
-                  ])
-                ])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "card ", attrs: { id: "headingThree" } }, [
-            _c(
-              "div",
-              {
-                staticClass: "card-header text-center",
-                attrs: {
-                  "data-toggle": "collapse",
-                  "data-target": "#collapseThree",
-                  "aria-expanded": "true",
-                  "aria-controls": "collapseThree"
-                }
-              },
-              [
-                _c("img", {
-                  staticClass: "img-fluid logosm d-inline",
-                  attrs: { src: "img/logo_c.png", alt: "" }
-                }),
-                _vm._v(" "),
-                _c(
-                  "h3",
-                  {
-                    staticClass:
-                      " text-center font-weight-bold d-inline pl-5 text-dark"
-                  },
-                  [_vm._v("C Básico AM")]
-                ),
-                _vm._v(" "),
-                _c("span", { staticClass: "pl-5 text-dark" }, [_vm._v("$800")])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "collapse show",
-                attrs: {
-                  id: "collapseThree",
-                  "aria-labelledby": "headingThree",
-                  "data-parent": "#accordion"
-                }
-              },
-              [
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-8" }, [
-                      _c(
-                        "ul",
-                        { staticClass: "text-left", attrs: { type: "none" } },
-                        [
-                          _c("li", [_vm._v("De Lunes a Viernes")]),
-                          _vm._v(" "),
-                          _c("li", [_vm._v("17/02/2020 al 21/02/2020")]),
-                          _vm._v(" "),
-                          _c("li", [_vm._v("17:00:00 a 21:00:00")]),
-                          _vm._v(" "),
-                          _c("li", [_vm._v("Laboratorio IBM")]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "font-weight-bold" }, [
-                            _vm._v("$1600")
-                          ])
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-4" }, [
-                      _c("a", { attrs: { href: "" } }, [
-                        _c("img", {
-                          staticClass: "img-fluid basura",
-                          attrs: { src: "img/icons/basura.png", alt: "" }
-                        })
-                      ])
-                    ])
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: " mt-4 pt-3 jumbotron infoP" }, [
-        _c("h2", [_vm._v("Información del pago")]),
-        _c("br"),
+            ]
+          )
+        ]),
         _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-12 col-md-6" }, [
-            _c("div", { staticClass: "card pt-3" }, [
-              _c("h5", { staticClass: "pb-2" }, [_vm._v("Instrucciones")]),
+        _c("div", { staticClass: "card", attrs: { id: "headingTwo" } }, [
+          _c(
+            "div",
+            {
+              staticClass: "card-header text-center",
+              attrs: {
+                "data-toggle": "collapse",
+                "data-target": "#collapseTwo",
+                "aria-expanded": "true",
+                "aria-controls": "collapseTwo"
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "img-fluid logosm d-inline",
+                attrs: { src: "img/logo_c.png", alt: "" }
+              }),
               _vm._v(" "),
-              _c("ol", [
-                _c("li", [
-                  _c("span", [_vm._v("AGREGA")]),
-                  _vm._v(" todos los cursos que desees inscribir.")
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _vm._v("Clic al botón "),
-                  _c("span", [_vm._v(" INSCRIBIR ")]),
-                  _vm._v(" y verifica los datos.")
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _vm._v("En "),
-                  _c("span", [_vm._v("MI PERFIL")]),
-                  _vm._v(" clic al botón "),
-                  _c("span", [_vm._v("GENERAR COMPROBANTE")]),
-                  _vm._v(".")
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _vm._v("Realiza tu "),
-                  _c("span", [_vm._v("PAGO")]),
-                  _vm._v(" en cajas.")
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("span", [_vm._v("ENTREGA")]),
-                  _vm._v(
-                    " tus papales en PROTECO al menos 72 horas antes del inicio del curso."
-                  )
-                ])
-              ]),
+              _c(
+                "h3",
+                {
+                  staticClass:
+                    " text-center font-weight-bold d-inline pl-5 text-dark"
+                },
+                [_vm._v("C Básico AM")]
+              ),
               _vm._v(" "),
-              _c("form", { staticClass: "pl-5", attrs: { action: "" } }, [
-                _c("input", { attrs: { type: "checkbox" } }),
-                _vm._v(" "),
-                _c("label", { attrs: { for: "" } }, [
-                  _vm._v("Acepto haber leído todos los pasos")
-                ])
-              ])
-            ])
-          ]),
+              _c("span", { staticClass: "pl-5 text-dark" }, [_vm._v("$800")])
+            ]
+          ),
           _vm._v(" "),
-          _c("div", { staticClass: "col-12 col-md-6 mt-3 mt-md-0" }, [
-            _c("div", { staticClass: "card pt-3" }, [
-              _c("table", { staticClass: "table table-hover mx-auto" }, [
-                _c("tbody", [
-                  _c("tr", [
-                    _c("td", [_vm._v("Subtotal")]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("$2400")])
+          _c(
+            "div",
+            {
+              staticClass: "collapse show",
+              attrs: {
+                id: "collapseTwo",
+                "aria-labelledby": "headingTwo",
+                "data-parent": "#accordion"
+              }
+            },
+            [
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-8" }, [
+                    _c(
+                      "ul",
+                      { staticClass: "text-left", attrs: { type: "none" } },
+                      [
+                        _c("li", [_vm._v("De Lunes a Viernes")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("17/02/2020 al 21/02/2020")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("17:00:00 a 21:00:00")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("Laboratorio IBM")]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "font-weight-bold" }, [
+                          _vm._v("$1600")
+                        ])
+                      ]
+                    )
                   ]),
                   _vm._v(" "),
-                  _c("tr", [
-                    _c("td", [_vm._v("Descuento")]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("$800")])
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", { staticClass: "font-weight-bold" }, [
-                    _c("td", [_vm._v("Total")]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("$1600")])
+                  _c("div", { staticClass: "col-4" }, [
+                    _c("a", { attrs: { href: "" } }, [
+                      _c("img", {
+                        staticClass: "img-fluid basura",
+                        attrs: { src: "img/icons/basura.png", alt: "" }
+                      })
+                    ])
                   ])
                 ])
-              ]),
+              ])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card ", attrs: { id: "headingThree" } }, [
+          _c(
+            "div",
+            {
+              staticClass: "card-header text-center",
+              attrs: {
+                "data-toggle": "collapse",
+                "data-target": "#collapseThree",
+                "aria-expanded": "true",
+                "aria-controls": "collapseThree"
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "img-fluid logosm d-inline",
+                attrs: { src: "img/logo_c.png", alt: "" }
+              }),
               _vm._v(" "),
-              _c("a", { attrs: { href: "" } }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-primary btn-sm mx-auto",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Generar Comprobante")]
-                ),
-                _c("br")
-              ]),
+              _c(
+                "h3",
+                {
+                  staticClass:
+                    " text-center font-weight-bold d-inline pl-5 text-dark"
+                },
+                [_vm._v("C Básico AM")]
+              ),
               _vm._v(" "),
-              _c("br")
-            ])
+              _c("span", { staticClass: "pl-5 text-dark" }, [_vm._v("$800")])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "collapse show",
+              attrs: {
+                id: "collapseThree",
+                "aria-labelledby": "headingThree",
+                "data-parent": "#accordion"
+              }
+            },
+            [
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-8" }, [
+                    _c(
+                      "ul",
+                      { staticClass: "text-left", attrs: { type: "none" } },
+                      [
+                        _c("li", [_vm._v("De Lunes a Viernes")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("17/02/2020 al 21/02/2020")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("17:00:00 a 21:00:00")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("Laboratorio IBM")]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "font-weight-bold" }, [
+                          _vm._v("$1600")
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-4" }, [
+                    _c("a", { attrs: { href: "" } }, [
+                      _c("img", {
+                        staticClass: "img-fluid basura",
+                        attrs: { src: "img/icons/basura.png", alt: "" }
+                      })
+                    ])
+                  ])
+                ])
+              ])
+            ]
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-12 col-md-6" }, [
+      _c("div", { staticClass: "card pt-3" }, [
+        _c("h5", { staticClass: "pb-2" }, [_vm._v("Instrucciones")]),
+        _vm._v(" "),
+        _c("ol", [
+          _c("li", [
+            _c("span", [_vm._v("AGREGA")]),
+            _vm._v(" todos los cursos que desees inscribir.")
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _vm._v("Clic al botón "),
+            _c("span", [_vm._v(" INSCRIBIR ")]),
+            _vm._v(" y verifica los datos.")
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _vm._v("En "),
+            _c("span", [_vm._v("MI PERFIL")]),
+            _vm._v(" clic al botón "),
+            _c("span", [_vm._v("GENERAR COMPROBANTE")]),
+            _vm._v(".")
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _vm._v("Realiza tu "),
+            _c("span", [_vm._v("PAGO")]),
+            _vm._v(" en cajas.")
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("span", [_vm._v("ENTREGA")]),
+            _vm._v(
+              " tus papales en PROTECO al menos 72 horas antes del inicio del curso."
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("form", { staticClass: "pl-5", attrs: { action: "" } }, [
+          _c("input", { attrs: { type: "checkbox" } }),
+          _vm._v(" "),
+          _c("label", { attrs: { for: "" } }, [
+            _vm._v("Acepto haber leído todos los pasos")
           ])
         ])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "" } }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-primary btn-sm mx-auto",
+          attrs: { type: "button" }
+        },
+        [_vm._v("Generar Comprobante")]
+      ),
+      _c("br")
     ])
   }
 ]
@@ -61538,6 +61227,11 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 
       console.log(state.cart);
       localStorage.setItem('cart', JSON.stringify(state.cart));
+    },
+    removeFromCart: function removeFromCart(state, _curso) {
+      state.cart.cursos = state.cart.cursos.filter(function (curso) {
+        return curso.curso_id !== _curso.curso_id;
+      });
     }
   },
   getters: {
