@@ -2408,7 +2408,12 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       cursos: [],
-      cursoABuscar: ''
+      cursoABuscar: '',
+      user: {
+        user_id: 1,
+        tipo: 'E',
+        name: 'Rodrigo F'
+      }
     };
   },
   created: function created() {
@@ -2434,7 +2439,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     agregarAlCarrito: function agregarAlCarrito(curso) {
       if (this.cursoEstaEnCarrito(curso)) {
-        this.$store.commit('addToCart', curso);
+        this.$store.commit('addToCart', curso, this.user);
         this.$toast.success('El curso se agrego con éxito al carrito', 'Bien', {
           icon: "icon-person",
           position: "topCenter"
@@ -2452,7 +2457,7 @@ __webpack_require__.r(__webpack_exports__);
       var _iteratorError = undefined;
 
       try {
-        for (var _iterator = this.$store.state.cart[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        for (var _iterator = this.$store.state.cart.cursos[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
           var curso = _step.value;
           if (_curso.curso_id === curso.curso_id) return false;
         }
@@ -60906,15 +60911,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************************!*\
   !*** ./resources/js/pages/CartPage.vue ***!
   \*****************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CartPage_vue_vue_type_template_id_2f3a4cd8_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CartPage.vue?vue&type=template&id=2f3a4cd8&scoped=true& */ "./resources/js/pages/CartPage.vue?vue&type=template&id=2f3a4cd8&scoped=true&");
 /* harmony import */ var _CartPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CartPage.vue?vue&type=script&lang=js& */ "./resources/js/pages/CartPage.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _CartPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _CartPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _CartPage_vue_vue_type_style_index_0_id_2f3a4cd8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CartPage.vue?vue&type=style&index=0&id=2f3a4cd8&scoped=true&lang=css& */ "./resources/js/pages/CartPage.vue?vue&type=style&index=0&id=2f3a4cd8&scoped=true&lang=css&");
+/* empty/unused harmony star reexport *//* harmony import */ var _CartPage_vue_vue_type_style_index_0_id_2f3a4cd8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CartPage.vue?vue&type=style&index=0&id=2f3a4cd8&scoped=true&lang=css& */ "./resources/js/pages/CartPage.vue?vue&type=style&index=0&id=2f3a4cd8&scoped=true&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -60946,7 +60950,7 @@ component.options.__file = "resources/js/pages/CartPage.vue"
 /*!******************************************************************!*\
   !*** ./resources/js/pages/CartPage.vue?vue&type=script&lang=js& ***!
   \******************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -61512,17 +61516,33 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
-    cart: JSON.parse(localStorage.getItem('cart')) || []
+    cart: JSON.parse(localStorage.getItem('cart')) || {
+      cursos: [],
+      subtotal: 0.0,
+      descuento: 0.0,
+      total: 0.0
+    }
   },
   mutations: {
-    addToCart: function addToCart(state, curso) {
-      state.cart.push(curso);
+    addToCart: function addToCart(state, curso, usuario) {
+      state.cart.cursos.push(curso); // checar tipo de usuario
+
+      var precio = parseFloat(curso.precio_estudiante_unam);
+      state.cart.subtotal = state.cart.subtotal + precio;
+      state.cart.total = state.cart.total + precio;
+
+      if (state.cart.cursos.length % 3 === 0) {
+        state.cart.descuento = parseInt(state.cart.cursos.length / 3) * precio;
+        state.cart.total = state.cart.subtotal - state.cart.descuento;
+      }
+
+      console.log(state.cart);
       localStorage.setItem('cart', JSON.stringify(state.cart));
     }
   },
   getters: {
     cartSize: function cartSize(state) {
-      return state.cart.length;
+      return state.cart.cursos.length;
     }
   }
 }));

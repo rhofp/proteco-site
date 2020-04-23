@@ -69,6 +69,11 @@ export default {
         return {
             cursos : [],
             cursoABuscar : '',
+            user : {
+                user_id:1,
+                tipo:'E',
+                name: 'Rodrigo F'
+            }
         }
     },
     created() {
@@ -92,7 +97,7 @@ export default {
         },
         agregarAlCarrito(curso){
             if (this.cursoEstaEnCarrito(curso)){
-                this.$store.commit('addToCart',curso);
+                this.$store.commit('addToCart',curso,this.user);
                 this.$toast.success('El curso se agrego con éxito al carrito', 'Bien',{
                     icon: "icon-person",
                     position: "topCenter",
@@ -106,7 +111,7 @@ export default {
 
         },
         cursoEstaEnCarrito(_curso){
-            for (const curso of this.$store.state.cart){
+            for (const curso of this.$store.state.cart.cursos){
                 if ( _curso.curso_id === curso.curso_id)
                     return false
             }
