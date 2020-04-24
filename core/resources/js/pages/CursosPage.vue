@@ -33,7 +33,8 @@
                     <div class="card-body">
                         <h5 class="card-title">{{curso.nombre + " " + nivelCurso(curso.nivel)}}</h5>
                         <p class="card-text m-0"><span>Fecha:</span> 17/02/20 al 21/02/20</p>
-                        <p class="card-text mt-1"><span>Horario:</span> 17:00 a 21:00</p>
+                        <!--p class="card-text mt-1"><span>Horario:</span> 17:00 a 21:00</p-->
+                        <p class="card-text mt-1"><span>Precio prueba:</span> ${{curso.precio_estudiante_unam}}</p>
                         <!-- reveal -->
                         <div class="card-reveal bg-light" data-rel="1">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-rel="1">
@@ -97,7 +98,7 @@ export default {
         },
         agregarAlCarrito(curso){
             if (this.cursoEstaEnCarrito(curso)){
-                this.$store.commit('addToCart',curso,this.user);
+                this.$store.commit('addToCart',curso);
                 this.$toast.success('El curso se agrego con éxito al carrito', 'Bien',{
                     icon: "icon-person",
                     position: "topCenter",

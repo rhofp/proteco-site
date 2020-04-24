@@ -2283,6 +2283,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'CursosPage',
   data: function data() {
@@ -2319,7 +2320,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     agregarAlCarrito: function agregarAlCarrito(curso) {
       if (this.cursoEstaEnCarrito(curso)) {
-        this.$store.commit('addToCart', curso, this.user);
+        this.$store.commit('addToCart', curso);
         this.$toast.success('El curso se agrego con éxito al carrito', 'Bien', {
           icon: "icon-person",
           position: "topCenter"
@@ -41127,9 +41128,12 @@ var render = function() {
                   _vm._v(" "),
                   _vm._m(1, true),
                   _vm._v(" "),
-                  _vm._m(2, true),
+                  _c("p", { staticClass: "card-text mt-1" }, [
+                    _c("span", [_vm._v("Precio prueba:")]),
+                    _vm._v(" $" + _vm._s(curso.precio_estudiante_unam))
+                  ]),
                   _vm._v(" "),
-                  _vm._m(3, true)
+                  _vm._m(2, true)
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "card-footer" }, [
@@ -41225,15 +41229,6 @@ var staticRenderFns = [
     return _c("p", { staticClass: "card-text m-0" }, [
       _c("span", [_vm._v("Fecha:")]),
       _vm._v(" 17/02/20 al 21/02/20")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "card-text mt-1" }, [
-      _c("span", [_vm._v("Horario:")]),
-      _vm._v(" 17:00 a 21:00")
     ])
   },
   function() {
@@ -61213,25 +61208,59 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     }
   },
   mutations: {
-    addToCart: function addToCart(state, curso, usuario) {
+    addToCart: function addToCart(state, curso) {
       state.cart.cursos.push(curso); // checar tipo de usuario
 
-      var precio = parseFloat(curso.precio_estudiante_unam);
-      state.cart.subtotal = state.cart.subtotal + precio;
-      state.cart.total = state.cart.total + precio;
+      var precios = state.cart.cursos.map(function (curso) {
+        return parseFloat(curso.precio_estudiante_unam);
+      }).sort();
+      state.cart.subtotal = precios.reduce(function (suma, desc) {
+        return suma + desc;
+      });
+      var multiploDescuento = parseInt(state.cart.cursos.length / 3); // 3x2
 
-      if (state.cart.cursos.length % 3 === 0) {
-        state.cart.descuento = parseInt(state.cart.cursos.length / 3) * precio;
-        state.cart.total = state.cart.subtotal - state.cart.descuento;
+      var descuentos = precios.slice(0, multiploDescuento);
+      console.log("mult-desc: ", multiploDescuento, "descs: ", descuentos);
+
+      if (descuentos.length > 0) {
+        state.cart.descuento = descuentos.reduce(function (suma, desc) {
+          return suma + desc;
+        });
+      } else {
+        state.cart.descuento = 0.0;
       }
 
+      state.cart.total = state.cart.subtotal - state.cart.descuento;
       console.log(state.cart);
       localStorage.setItem('cart', JSON.stringify(state.cart));
     },
     removeFromCart: function removeFromCart(state, _curso) {
       state.cart.cursos = state.cart.cursos.filter(function (curso) {
         return curso.curso_id !== _curso.curso_id;
+      }); // checar tipo de usuario
+
+      var precios = state.cart.cursos.map(function (curso) {
+        return parseFloat(curso.precio_estudiante_unam);
+      }).sort();
+      state.cart.subtotal = precios.reduce(function (suma, desc) {
+        return suma + desc;
       });
+      var multiploDescuento = parseInt(state.cart.cursos.length / 3); // 3x2
+
+      var descuentos = precios.slice(0, multiploDescuento);
+      console.log("mult-desc: ", multiploDescuento, "descs: ", descuentos);
+
+      if (descuentos.length > 0) {
+        state.cart.descuento = descuentos.reduce(function (suma, desc) {
+          return suma + desc;
+        });
+      } else {
+        state.cart.descuento = 0.0;
+      }
+
+      state.cart.total = state.cart.subtotal - state.cart.descuento;
+      console.log(state.cart);
+      localStorage.setItem('cart', JSON.stringify(state.cart));
     }
   },
   getters: {

@@ -13,17 +13,28 @@ export default new Vuex.Store({
         }
     },
     mutations: {
-        addToCart(state,curso,usuario){
+        addToCart(state,curso){
             state.cart.cursos.push(curso);
             // checar tipo de usuario
-            let precio = parseFloat(curso.precio_estudiante_unam);
-            state.cart.subtotal = state.cart.subtotal + precio;
-            state.cart.total = state.cart.total + precio;
+            let precios = state.cart.cursos.map( curso => {
+                return parseFloat(curso.precio_estudiante_unam);
+            }).sort();
 
-            if (state.cart.cursos.length % 3 === 0){
-                state.cart.descuento = parseInt( state.cart.cursos.length / 3 ) * precio;
-                state.cart.total = state.cart.subtotal - state.cart.descuento;
+            state.cart.subtotal = precios.reduce( (suma,desc) => {
+                return suma + desc;
+            });
+
+            let multiploDescuento = parseInt(state.cart.cursos.length / 3); // 3x2
+            let descuentos = precios.slice(0,multiploDescuento);
+            console.log("mult-desc: ",multiploDescuento,"descs: ",descuentos);
+            if (descuentos.length > 0){
+                state.cart.descuento = descuentos.reduce( (suma,desc) => {
+                    return suma + desc;
+                });
+            }else {
+                state.cart.descuento = 0.0;
             }
+            state.cart.total = state.cart.subtotal - state.cart.descuento;
 
             console.log(state.cart);
             localStorage.setItem('cart', JSON.stringify(state.cart));
@@ -32,6 +43,31 @@ export default new Vuex.Store({
             state.cart.cursos = state.cart.cursos.filter(curso => {
                 return curso.curso_id !== _curso.curso_id;
             });
+
+            // checar tipo de usuario
+            let precios = state.cart.cursos.map( curso => {
+                return parseFloat(curso.precio_estudiante_unam);
+            }).sort();
+
+            state.cart.subtotal = precios.reduce( (suma,desc) => {
+                return suma + desc;
+            });
+
+            let multiploDescuento = parseInt(state.cart.cursos.length / 3); // 3x2
+            let descuentos = precios.slice(0,multiploDescuento);
+            console.log("mult-desc: ",multiploDescuento,"descs: ",descuentos);
+            if (descuentos.length > 0){
+                state.cart.descuento = descuentos.reduce( (suma,desc) => {
+                    return suma + desc;
+                });
+            }else {
+                state.cart.descuento = 0.0;
+            }
+            state.cart.total = state.cart.subtotal - state.cart.descuento;
+
+            console.log(state.cart);
+            localStorage.setItem('cart', JSON.stringify(state.cart));
+
         }
 
     },
