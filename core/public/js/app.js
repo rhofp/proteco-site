@@ -2319,14 +2319,21 @@ __webpack_require__.r(__webpack_exports__);
       return nivel === 'B' ? 'Básico' : nivel === 'I' ? 'Intermedio' : nivel === 'A' ? 'Avanzado' : '';
     },
     agregarAlCarrito: function agregarAlCarrito(curso) {
-      if (this.cursoEstaEnCarrito(curso)) {
-        this.$store.commit('addToCart', curso);
-        this.$toast.success('El curso se agrego con éxito al carrito', 'Bien', {
-          icon: "icon-person",
-          position: "topCenter"
-        });
+      if (!this.cursoLimiteSuperado()) {
+        if (this.cursoEstaEnCarrito(curso)) {
+          this.$store.commit('addToCart', curso);
+          this.$toast.success('El curso se agrego con éxito al carrito', 'Bien', {
+            icon: "icon-person",
+            position: "topCenter"
+          });
+        } else {
+          this.$toast.warning('El curso ya se encuentra en el carrito', 'OJO', {
+            icon: "icon-person",
+            position: "topCenter"
+          });
+        }
       } else {
-        this.$toast.warning('El curso ya se encuentra en el carrito', 'OJO', {
+        this.$toast.warning('Ha llegado al cupo máximo del carrito', 'OJO', {
           icon: "icon-person",
           position: "topCenter"
         });
@@ -2358,6 +2365,9 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       return true;
+    },
+    cursoLimiteSuperado: function cursoLimiteSuperado() {
+      return this.$store.state.cart.cursos >= 6;
     }
   }
 });
@@ -61209,42 +61219,30 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
   },
   mutations: {
     addToCart: function addToCart(state, curso) {
-      state.cart.cursos.push(curso); // checar tipo de usuario
-
-      var precios = state.cart.cursos.map(function (curso) {
-        return parseFloat(curso.precio_estudiante_unam);
-      }).sort();
-      state.cart.subtotal = precios.reduce(function (suma, desc) {
-        return suma + desc;
-      });
-      var multiploDescuento = parseInt(state.cart.cursos.length / 3); // 3x2
-
-      var descuentos = precios.slice(0, multiploDescuento);
-      console.log("mult-desc: ", multiploDescuento, "descs: ", descuentos);
-
-      if (descuentos.length > 0) {
-        state.cart.descuento = descuentos.reduce(function (suma, desc) {
-          return suma + desc;
-        });
-      } else {
-        state.cart.descuento = 0.0;
-      }
-
-      state.cart.total = state.cart.subtotal - state.cart.descuento;
-      console.log(state.cart);
-      localStorage.setItem('cart', JSON.stringify(state.cart));
+      state.cart.cursos.push(curso);
+      this.commit('actualizarPrecios');
     },
     removeFromCart: function removeFromCart(state, _curso) {
       state.cart.cursos = state.cart.cursos.filter(function (curso) {
         return curso.curso_id !== _curso.curso_id;
-      }); // checar tipo de usuario
-
+      });
+      this.commit('actualizarPrecios');
+    },
+    actualizarPrecios: function actualizarPrecios(state) {
+      // mutacion privada (auxiliar)
+      // checar tipo de usuario
       var precios = state.cart.cursos.map(function (curso) {
         return parseFloat(curso.precio_estudiante_unam);
       }).sort();
-      state.cart.subtotal = precios.reduce(function (suma, desc) {
-        return suma + desc;
-      });
+
+      if (precios.length > 0) {
+        state.cart.subtotal = precios.reduce(function (suma, desc) {
+          return suma + desc;
+        });
+      } else {
+        state.cart.subtotal = 0.0;
+      }
+
       var multiploDescuento = parseInt(state.cart.cursos.length / 3); // 3x2
 
       var descuentos = precios.slice(0, multiploDescuento);

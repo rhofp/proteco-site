@@ -97,14 +97,21 @@ export default {
                 nivel === 'A' ? 'Avanzado' : '';
         },
         agregarAlCarrito(curso){
-            if (this.cursoEstaEnCarrito(curso)){
-                this.$store.commit('addToCart',curso);
-                this.$toast.success('El curso se agrego con éxito al carrito', 'Bien',{
-                    icon: "icon-person",
-                    position: "topCenter",
-                });
-            }else {
-                this.$toast.warning('El curso ya se encuentra en el carrito', 'OJO',{
+            if (!this.cursoLimiteSuperado()){
+                if (this.cursoEstaEnCarrito(curso)){
+                    this.$store.commit('addToCart',curso);
+                    this.$toast.success('El curso se agrego con éxito al carrito', 'Bien',{
+                        icon: "icon-person",
+                        position: "topCenter",
+                    });
+                }else {
+                    this.$toast.warning('El curso ya se encuentra en el carrito', 'OJO',{
+                        icon: "icon-person",
+                        position: "topCenter",
+                    });
+                }
+            }else{
+                this.$toast.warning('Ha llegado al cupo máximo del carrito', 'OJO',{
                     icon: "icon-person",
                     position: "topCenter",
                 });
@@ -117,6 +124,9 @@ export default {
                     return false
             }
             return true
+        },
+        cursoLimiteSuperado() {
+            return this.$store.state.cart.cursos >= 6;
         }
     }
 }
