@@ -17,6 +17,10 @@
 
 Auth::routes(['verify' => true]);
 
+Route::prefix('admin')->name('admin.')->group(function() {
+    Route::get('/', 'AdminController@index')->name('dashboard');
+});
+
 //Route::view('/{any}','spa')->where('any','.*');
 Route::any('{all}', function (){
     return view('spa');
@@ -26,9 +30,8 @@ Route::any('{all}', function (){
  *                      ADMIN ROUTES
  * ******************************************************************************/
 
-Route::prefix('admin')->name('admin.')->group(function() {
+/*Route::prefix('admin')->name('admin.')->group(function() {
     Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('login.submit');
     Route::get('logout/', 'Auth\AdminLoginController@logout')->name('logout');
-    Route::get('/', 'AdminController@index')->name('dashboard');
-   }) ;
+}) ;*/
