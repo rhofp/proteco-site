@@ -8,7 +8,7 @@
         <!-- CURSOS PARA MD -->
         <div class="container pt-3 d-none d-lg-block">
             <div class="row">
-                <div class="col-6 mb-2" v-for="curso in this.$store.state.cart.cursos" :key="curso.curso_id">
+                <div class="col-6 mb-2" v-for="curso in this.$store.state.cart.cart.cursos" :key="curso.curso_id">
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
@@ -158,15 +158,15 @@
                             <tbody>
                             <tr>
                                 <td>Subtotal</td>
-                                <td>$ {{this.$store.state.cart.subtotal}}</td>
+                                <td>$ {{this.$store.state.cart.cart.subtotal}}</td>
                             </tr>
                             <tr>
                                 <td>Descuento</td>
-                                <td>$ {{this.$store.state.cart.descuento}}</td>
+                                <td>$ {{this.$store.state.cart.cart.descuento}}</td>
                             </tr>
                             <tr class="font-weight-bold">
                                 <td>Total</td>
-                                <td>$ {{this.$store.state.cart.total}}</td>
+                                <td>$ {{this.$store.state.cart.cart.total}}</td>
                             </tr>
                             </tbody>
                         </table>

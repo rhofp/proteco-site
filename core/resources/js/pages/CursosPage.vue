@@ -119,14 +119,14 @@ export default {
 
         },
         cursoEstaEnCarrito(_curso){
-            for (const curso of this.$store.state.cart.cursos){
+            for (const curso of this.$store.state.cart.cart.cursos){
                 if ( _curso.curso_id === curso.curso_id)
                     return false
             }
             return true
         },
         cursoLimiteSuperado() {
-            return this.$store.state.cart.cursos >= 6;
+            return this.$store.state.cart.cart.cursos >= 6;
         }
     }
 }

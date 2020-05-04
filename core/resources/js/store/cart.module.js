@@ -1,9 +1,4 @@
-import Vue from 'vue';
-import Vuex from 'vuex'
-
-Vue.use(Vuex);
-
-export default new Vuex.Store({
+export default {
     state: {
         cart:JSON.parse(localStorage.getItem('cart')) || {
             cursos:[],
@@ -61,4 +56,4 @@ export default new Vuex.Store({
             return state.cart.cursos.length
         }
     }
-})
+}

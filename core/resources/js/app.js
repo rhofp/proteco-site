@@ -12,7 +12,8 @@ import App from './components/App'
 require('./bootstrap');
 window.Vue = require('vue');
 
-Vue.component('shopping-icon',require('./components/ShoppingIcon.vue').default);
+Vue.component('shopping-icon',
+    require('./components/ShoppingIcon.vue').default);
 
 Vue.use(VueIziToast);
 
