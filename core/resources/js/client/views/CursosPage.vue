@@ -52,7 +52,7 @@
                     </div>
                     <div class="card-footer">
                         <a href="" class="card-link" title="Agregar al carrito"><i class="material-icons"
-                            title="Agregar al carrito" v-on:click.prevent="agregarAlCarrito(curso)">shopping_cart</i></a>
+                            title="Agregar al carrito" v-on:click.prevent="agregarCurso(curso)">shopping_cart</i></a>
                         <a href="#" class="card-link" title="Ver el temario">Temario</a>
                         <span href="" class="show card-link text-right text-primary" data-rel="1"
                             title="Ver detalles del curso">Ver más</span>
@@ -64,6 +64,7 @@
     </div>
 </template>
 <script>
+import { mapGetters,mapMutations } from "vuex";
 export default {
     name: 'CursosPage',
     data(){
@@ -83,23 +84,32 @@ export default {
         });
     },
     computed:{
+        ...mapGetters(['tamanoCarrito','cursosEnCarrito']),
         filterCursos(){
             return this.cursos.filter( curso => {
                 return curso.nombre.toLowerCase()
                     .match(this.cursoABuscar.toLowerCase());
             });
-        }
+        },
     },
     methods:{
+        ...mapMutations(['agregarAlCarrito']),
         nivelCurso(nivel){
             return nivel === 'B' ? 'Básico' :
                 nivel ==='I' ? 'Intermedio' :
                 nivel === 'A' ? 'Avanzado' : '';
         },
-        agregarAlCarrito(curso){
-            if (!this.cursoLimiteSuperado()){
+        cursoEstaEnCarrito(_curso){
+            for (const curso of this.cursosEnCarrito){
+                if ( _curso.curso_id === curso.curso_id)
+                    return false
+            }
+            return true
+        },
+        agregarCurso(curso){
+            if (!(this.tamanoCarrito >= 6)){
                 if (this.cursoEstaEnCarrito(curso)){
-                    this.$store.commit('addToCart',curso);
+                    this.agregarAlCarrito(curso);
                     this.$toast.success('El curso se agrego con éxito al carrito', 'Bien',{
                         icon: "icon-person",
                         position: "topCenter",
@@ -110,24 +120,13 @@ export default {
                         position: "topCenter",
                     });
                 }
-            }else{
-                this.$toast.warning('Ha llegado al cupo máximo del carrito', 'OJO',{
+            }else {
+                this.$toast.warning('Ha llegado al cupo máximo del carrito', 'OJO', {
                     icon: "icon-person",
                     position: "topCenter",
                 });
             }
-
         },
-        cursoEstaEnCarrito(_curso){
-            for (const curso of this.$store.state.cart.cart.cursos){
-                if ( _curso.curso_id === curso.curso_id)
-                    return false
-            }
-            return true
-        },
-        cursoLimiteSuperado() {
-            return this.$store.state.cart.cart.cursos >= 6;
-        }
     }
 }
 </script>

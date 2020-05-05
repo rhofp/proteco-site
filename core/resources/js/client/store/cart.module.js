@@ -1,18 +1,33 @@
 export default {
     state: {
-        cart:JSON.parse(localStorage.getItem('cart')) || {
+        cart: JSON.parse(localStorage.getItem('cart')) || {
             cursos:[],
             subtotal:0.0,
             descuento : 0.0,
             total:0.0
         },
-
+    },
+    getters:{
+        tamanoCarrito(state){
+            return state.cart.cursos.length
+        },
+        cursosEnCarrito(state) {
+            return state.cart.cursos // ver si retornar cursos o el carrito en si
+        },
+        subtotalCarrito(state){
+            return state.cart.subtotal;
+        },
+        totalCarrito(state){
+            return state.cart.total;
+        },
+        descuentoCarrito(state){
+            return state.cart.descuento;
+        }
     },
     mutations: {
-        addToCart(state,curso){
+        agregarAlCarrito(state,curso){
             state.cart.cursos.push(curso);
             this.commit('actualizarPrecios');
-
         },
         removeFromCart(state,_curso){
             state.cart.cursos = state.cart.cursos.filter(curso => {
@@ -36,7 +51,7 @@ export default {
 
             let multiploDescuento = parseInt(state.cart.cursos.length / 3); // 3x2
             let descuentos = precios.slice(0,multiploDescuento);
-            console.log("mult-desc: ",multiploDescuento,"descs: ",descuentos);
+            //console.log("mult-desc: ",multiploDescuento,"descs: ",descuentos);
             if (descuentos.length > 0){
                 state.cart.descuento = descuentos.reduce( (suma,desc) => {
                     return suma + desc;
@@ -46,14 +61,7 @@ export default {
             }
             state.cart.total = state.cart.subtotal - state.cart.descuento;
 
-            console.log(state.cart);
             localStorage.setItem('cart', JSON.stringify(state.cart));
-        }
-
+        },
     },
-    getters:{
-        cartSize(state){
-            return state.cart.cursos.length
-        }
-    }
 }

@@ -9,13 +9,14 @@
 			<div class="container">
 				<div class="card-body bodyI">
 					<h5 class="card-title">¡Hola! Ingresa tus datos</h5><br><br>
-					<form class="fInicio pb-3" v-on:submit.prevent="login">
+					<form class="fInicio pb-3" v-on:submit.prevent="loginSubmit">
 						<div class="form-group">
 							<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Correo"
-                            v-model="correo">
+                            v-model="correo" name="correo">
 						</div>
 						<div class="form-group">
-							<input type="password" class="form-control" placeholder="Contraseña" v-model="contrasena">
+							<input type="password" class="form-control" placeholder="Contraseña"
+                                   name="contrasena" v-model="contrasena">
 						</div>
 						<div class="form-check text-left pt-2">
 							<input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -88,25 +89,30 @@
 </style>
 
 <script>
-    export default {
-        data(){
-            return {
-                correo: '',
-                contrasena : ''
-            }
-        },
-        methods:{
-            login(){
-                axios.post('v1/login', {
-                    email: this.correo,
-                    password: this.contrasena,
-                    remember_me : true
-                }).then(response =>{
-                    console.log(response)
-                }).catch(error => {
-                    console.log(error)
-                });
-            },
+import {mapActions} from 'vuex';
+export default {
+    data(){
+        return {
+            correo: '',
+            contrasena : ''
         }
+    },
+    methods:{
+        ...mapActions(['login']),
+        loginSubmit(e){
+            e.preventDefault();
+            this.login({
+                email: this.correo,
+                password: this.contrasena,
+                remember_me : true
+            }).then(response =>{
+                console.log(response)
+                // redirect
+            }).catch(error => {
+                // reintentar : correo o contraseña incorrectos
+                console.log(error)
+            });
+        },
     }
+}
 </script>

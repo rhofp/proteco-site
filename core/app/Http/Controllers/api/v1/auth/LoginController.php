@@ -17,21 +17,26 @@ class LoginController extends Controller
             'password' => 'required|string',
             'remember_me' => 'boolean'
         ]);
-        if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
+        if (Auth::attempt(['email' => request('email'),
+            'password' => request('password')])) {
             $user = Auth::user();
-            $success['token'] = $user->createToken('laravel_token')->accessToken;
-            //After successfull authentication, notice how I return json parameters
-            return response()->json([
+            $response = [
                 'success' => true,
-                'token' => $success,
-                'user' => $user
-            ]);
+                'message' => 'usuario logeado con éxito',
+                'data' => [
+                    'user' => $user,
+                    'token_type' => 'Bearer',
+                    'token' =>  $user->createToken('access_token')->accessToken,
+                ] ,
+            ];
+            return response()->json($response,200);
         } else {
-            //if authentication is unsuccessfull, notice how I return json parameters
-            return response()->json([
-                'success' => false,
-                'message' => 'Invalid Email or Password',
-            ], 401);
+            $response = [
+              'success' => false,
+              'message' => 'Correo o contraseña incorrectos',
+              'data' => []
+            ];
+            return response()->json($response, 401);
         }
     }
 

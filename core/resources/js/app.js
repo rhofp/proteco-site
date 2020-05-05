@@ -6,14 +6,14 @@
 import Vue from 'vue';
 import VueIziToast from 'vue-izitoast'
 import "izitoast/dist/css/iziToast.css";
-import router from './router'
-import store from "./store";
-import App from './components/App'
+import router from './client/router'
+import store from "./client/store";
+import App from './layouts/App'
 require('./bootstrap');
 window.Vue = require('vue');
 
 Vue.component('shopping-icon',
-    require('./components/ShoppingIcon.vue').default);
+    require('./client/components/ShoppingIcon.vue').default);
 
 Vue.use(VueIziToast);
 

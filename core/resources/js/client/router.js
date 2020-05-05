@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import RootPage from './pages/RootPage';
-import CursosPage from './pages/CursosPage';
-import LoginPage from './pages/LoginPage';
-import RegistroPage from './pages/RegistroPage';
-import FaqPage from './pages/FaqPage';
-import ConvocatoriaPage from './pages/ConvocatoriaPage';
-import CartPage from './pages/CartPage';
+import RootPage from './views/RootPage';
+import CursosPage from './views/CursosPage';
+import LoginPage from './views/LoginPage';
+import RegistroPage from './views/RegistroPage';
+import FaqPage from './views/FaqPage';
+import ConvocatoriaPage from './views/ConvocatoriaPage';
+import CartPage from './views/CartPage';
 
 Vue.use(VueRouter);
 

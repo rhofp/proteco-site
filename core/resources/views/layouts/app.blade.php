@@ -57,8 +57,8 @@
                     <router-link class="nav-item mr-1 ml-3" tag="li" :to="{name:'convocatoria'}">
                         <a href="#" class="nav-link">Convocatoria</a>
                     </router-link>
-                    @guest
-                    <router-link class="nav-item mr-1 ml-3" tag="li" :to="{name:'login'}">
+                    <div v-if="$store.getters.logeado === false">
+                        <router-link class="nav-item mr-1 ml-3" tag="li" :to="{name:'login'}">
                             <a href="#" class="nav-link">Iniciar sesión</a>
                         </router-link>
                         <router-link class="nav-item mr-1 ml-3" tag="li" :to="{name:'cart'}">
@@ -66,12 +66,13 @@
                                 <shopping-icon></shopping-icon>
                             </a>
                         </router-link>
-                    @else
+                    </div>
+                    <div v-else>
                         <!-- Vista para el usuario -->
                         <li class="nav-item mr-1 ml-3  dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false">
-                                Nombre del usuario
+                                nombreUsuario
                             </a>
                             <div class="pull-right dropdown-menu dropdown-menu-right mt-2" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">Mis cursos</a>
@@ -80,7 +81,7 @@
                                 <a class="dropdown-item" href="#">Something else here</a>
                             </div>
                         </li>
-                    @endguest
+                    </div>
                 </ul>
                 <!-- my-2 my-lg-0 -->
             </div>

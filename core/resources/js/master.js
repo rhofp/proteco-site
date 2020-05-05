@@ -1,5 +1,5 @@
 import Vue from "vue";
-import Master from "./components/Master";
+import Master from "./layouts/Master";
 
 require('./bootstrap');
 window.Vue = require('vue');

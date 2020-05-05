@@ -8,7 +8,7 @@
         <!-- CURSOS PARA MD -->
         <div class="container pt-3 d-none d-lg-block">
             <div class="row">
-                <div class="col-6 mb-2" v-for="curso in this.$store.state.cart.cart.cursos" :key="curso.curso_id">
+                <div class="col-6 mb-2" v-for="curso in this.cursosEnCarrito" :key="curso.curso_id">
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
@@ -16,7 +16,8 @@
                                     <img class="img-fluid" src="img/logo_c.png" alt="">
                                 </div>
                                 <div class="col-6">
-                                    <h3 class=" text-center font-weight-bold">{{curso.nombre + " " + nivelCurso(curso.nivel)}}</h3>
+                                    <h3 class=" text-center font-weight-bold">{{curso.nombre + " " +
+                                        nivelCurso(curso.nivel)}}</h3>
                                     <ul type="none" class="text-left">
                                         <li>De Lunes a Viernes</li>
                                         <li>17/02/2020 al 21/02/2020</li>
@@ -41,7 +42,8 @@
         <div class="container  d-lg-none">
             <div id="accordion" class="mt-3">
                 <div class="card"  id="headingOne">
-                    <div class="card-header text-center" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <div class="card-header text-center" data-toggle="collapse" data-target="#collapseOne"
+                         aria-expanded="true" aria-controls="collapseOne">
                         <img src="img/logo_c.png" class="img-fluid logosm d-inline" alt="">
                         <h3 class=" text-center font-weight-bold d-inline pl-5 text-dark">C Básico AM</h3>
                         <span class="pl-5 text-dark">$800</span>
@@ -143,7 +145,8 @@
                             <li>Clic al botón <span> INSCRIBIR </span> y verifica los datos.</li>
                             <li>En <span>MI PERFIL</span> clic al botón <span>GENERAR COMPROBANTE</span>.</li>
                             <li>Realiza tu <span>PAGO</span> en cajas.</li>
-                            <li><span>ENTREGA</span> tus papales en PROTECO al menos 72 horas antes del inicio del curso.</li>
+                            <li><span>ENTREGA</span> tus papales en PROTECO al menos 72 horas antes del inicio
+                                del curso.</li>
                         </ol>
                         <form action="" class="pl-5">
                             <input type="checkbox">
@@ -158,15 +161,15 @@
                             <tbody>
                             <tr>
                                 <td>Subtotal</td>
-                                <td>$ {{this.$store.state.cart.cart.subtotal}}</td>
+                                <td>$ {{subtotalCarrito}}</td>
                             </tr>
                             <tr>
                                 <td>Descuento</td>
-                                <td>$ {{this.$store.state.cart.cart.descuento}}</td>
+                                <td>$ {{descuentoCarrito}}</td>
                             </tr>
                             <tr class="font-weight-bold">
                                 <td>Total</td>
-                                <td>$ {{this.$store.state.cart.cart.total}}</td>
+                                <td>$ {{totalCarrito}}</td>
                             </tr>
                             </tbody>
                         </table>
@@ -237,15 +240,20 @@
 </style>
 
 <script>
+import { mapGetters,mapMutations } from "vuex";
 export default {
+    computed:{
+        ...mapGetters(['cursosEnCarrito','subtotalCarrito','totalCarrito',"descuentoCarrito"])
+    },
     methods: {
+        ...mapMutations(['removeFromCart']),
         nivelCurso(nivel) {
             return nivel === 'B' ? 'Básico' :
                 nivel === 'I' ? 'Intermedio' :
                     nivel === 'A' ? 'Avanzado' : '';
         },
         quitarCurso(curso){
-            this.$store.commit('removeFromCart',curso);
+            this.removeFromCart(curso);
             this.$toast.success('El curso se quito del carrito', 'Bien',{
                 icon: "icon-person",
                 position: "topCenter",

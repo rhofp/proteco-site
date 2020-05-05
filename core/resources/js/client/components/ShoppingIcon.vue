@@ -8,7 +8,7 @@
 export default {
     methods:{
         contadorCart(){
-            return this.$store.getters.cartSize > 0 ? this.$store.getters.cartSize :''
+            return this.$store.getters.tamanoCarrito > 0 ? this.$store.getters.tamanoCarrito :''
         }
     },
     mounted() {
