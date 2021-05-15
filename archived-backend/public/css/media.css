@@ -1,0 +1,428 @@
+/*MEDIA*/
+
+@media (min-height: 0px) {
+	.close-reg{
+	text-align: center;
+}
+
+	.imagePreview {
+    width: 80%;
+    height: 100%;
+	}
+	.carousel h1{
+		font-size: 1.8rem;
+	}
+	.carousel h5{
+		font-size: 1.5rem;
+		padding-top: 1.5rem;
+	}
+	.carousel h6{
+		font-size: 1.5rem;
+		padding-top: .5rem;
+	}
+	.titulos h2{
+		font-size: 1.5rem;
+		margin: 1rem 0;	
+	}
+	.titulos-aceptados h2{
+		font-size: 1.2rem;
+	}
+	.titulofaq{
+		font-size: 1.5rem;
+	}
+	.publicacionesimg {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+	.card-title{
+		font-size: 1.8rem;
+		text-align: center;
+	}
+
+	.card-body{
+		font-size: 1.2rem;
+	}
+
+	.forms{
+	padding: 0 1rem;
+	}
+
+
+	footer, .copyright{
+		font-size: .85rem;
+	}
+
+	.publicacionesindex .card{
+	margin: 0 .5rem .5rem;}
+
+	.textopublicacion, .forms h6{
+	font-size: 1.2rem;
+	}
+
+	.nombrearticulo, .reply{
+	font-size: 1.4rem;
+	text-align: center;
+	}
+
+	.modaltitulos{
+		font-size: 1.6rem;
+	}
+
+	.modaltitle{
+		font-size: 1.5rem;
+	}
+
+	.modalul{
+		font-size:1.2rem;
+	}
+
+	.convocatoria{
+		font-size: 1rem;
+		padding: 1.5rem 1rem;
+	}
+
+	.convocatoria h2{
+		font-size: 1.3rem;
+	}
+
+
+}
+
+@media (min-height: 400px) {
+	.close-reg{
+	text-align: center;
+}
+
+	.imagePreview {
+    width: 80%;
+    height: 100%;
+	}
+	.carousel h1{
+		font-size: 1.8rem;
+	}
+	.carousel h5{
+		font-size: 1.5rem;
+		padding-top: .5rem;
+
+		
+	}
+	.carousel h6{
+		font-size: 1.5rem;
+		padding-top: .5rem;
+	}
+	.titulofaq{
+		font-size: 1.5rem;
+	}
+	.titulos h2{
+		font-size: 1.5rem;
+		margin: 1rem 0;	
+	}
+	.titulos-aceptados h2{
+		font-size: 1.2rem;
+	}
+	.publicacionesindex .card{
+	margin: 0 .5rem .5rem;}
+
+	.publicacionesimg {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+	.card-title{
+		font-size: 1.8rem;
+		text-align: center;
+	}
+	.card-body{
+		font-size: 1.2rem;
+	}
+	.convocatoria{
+		font-size: 1rem;
+		padding: 1.5rem 1rem;
+	}
+	.convocatoria h2{
+		font-size: 1.3rem;
+	}
+	.forms{
+	padding: 0 1rem;
+	}
+
+
+	footer, .copyright{
+		font-size: .85rem;
+	}
+
+	.textopublicacion, .forms h6{
+	font-size: 1.2rem;
+	}
+	.nombrearticulo, .reply{
+	font-size: 1.4rem;
+	text-align: center;
+	}
+	.modaltitulos{
+		font-size: 1.6rem;
+	}
+
+	.modaltitle{
+		font-size: 1.5rem;
+	}
+
+	.modalul{
+		font-size:1.2rem;
+	}
+
+
+
+}
+
+@media (min-height: 568px) {
+	.close-reg{
+	text-align: left;
+}
+
+	.imagePreview {
+    width: 80%;
+    height: 250%;
+	}
+	.carousel h1{
+		font-size: 3.5rem;
+	}
+	.carousel h5, .carousel h6{
+		font-size: 2.8rem;
+		padding-top: 3rem;
+	}
+	.carousel h6{
+		font-size: 2.8rem;
+		padding-top: 1.5rem;
+	}
+	.titulos h2{
+		font-size: 2.8rem;
+		margin: 1.5rem 0;	
+	}
+	.titulos-aceptados h2{
+		font-size: 2.2rem;
+	}
+	.titulofaq{
+		font-size: 2.3rem;
+	}
+	.publicacionesindex .card{
+	margin: 0 2rem 2rem;}
+
+	.publicacionesimg {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+}
+	.card-title{
+		font-size: 2rem;
+		text-align: left;
+	}
+	.card-body{
+		font-size: 1.3rem;
+	}
+
+	.forms{
+	padding: 0 3rem;
+	}
+
+	.textopublicacion,.forms h6{
+	font-size: 1.3rem;
+	}
+	.nombrearticulo{
+	font-size: 2.3rem;
+	text-align: left;
+}
+	.reply{
+		text-align: left;
+		font-size: 2rem;
+	}
+
+	.convocatoria{
+		font-size: 1.2rem;
+		padding: 1.5rem 1.5rem;
+	}
+	.convocatoria h2{
+		font-size: 1.8rem;
+	}
+
+
+	footer, .copyright{
+		font-size: 1rem;
+	}
+	.modaltitulos{
+		font-size: 2rem;
+	}
+
+	.modaltitle{
+		font-size: 1.8rem;
+	}
+
+	.modalul{
+		font-size:1.5rem;
+	}
+}
+@media (min-height: 992px) {
+	.close-reg{
+	text-align: left;
+}
+
+	.imagePreview {
+    width: 80%;
+    height: 250%;
+	}
+	.carousel h1{
+		font-size: 4rem;
+	}
+	.carousel h5{
+		font-size: 3rem;
+		padding-top: 3rem;
+	}
+	.carousel h6{
+		font-size: 3rem;
+		padding-top: 1.5rem;
+	}
+	.titulos h2{
+		font-size: 3rem;
+		margin: 2rem 0;
+	}
+	.titulos-aceptados h2{
+		font-size: 2.2rem;
+	}
+	.titulofaq{
+		font-size: 2.3rem;
+	}
+	.publicacionesindex .card{
+	margin: 0 4rem 2rem;}
+
+	.publicacionesimg {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+}
+	.card-title{
+		font-size: 2rem;
+		text-align: left;
+	}
+	.card-body{
+		font-size: 1.3rem;
+	}
+	.textopublicacion,.forms h6{
+	font-size: 1.3rem;
+	}
+	.nombrearticulo{
+	font-size: 2.3rem;
+	text-align: left;
+	}
+	.convocatoria{
+		font-size: 1.2rem;
+		padding: 1.5rem 2.5rem;
+	}
+	.convocatoria h2{
+		font-size: 1.8rem;
+	}
+	.forms{
+	padding: 0 3rem;
+	}
+
+	footer, .copyright{
+		font-size: 1rem;
+	}
+	.reply{
+		text-align: left;
+		font-size: 2rem;
+	}
+	.modaltitulos{
+		font-size: 2rem;
+	}
+
+	.modaltitle{
+		font-size: 1.8rem;
+	}
+
+	.modalul{
+		font-size:1.5rem;
+	}
+
+}
+@media (min-height: 1200px) {
+	.close-reg{
+	text-align: left;
+}
+
+	.imagePreview {
+    width: 80%;
+    height: 250%;
+	}
+	.carousel h1{
+		font-size: 4.5rem;
+	}
+	.carousel h5{
+		font-size: 3rem;
+		padding-top: 3rem;
+	}
+	.carousel h6{
+		font-size: 3rem;
+		padding-top: 1.5rem;
+	}
+	.titulos h2{
+		font-size: 3rem;
+		margin: 2rem 0;
+	}
+	.titulofaq{
+		font-size: 2.3rem;
+	}
+	.titulos-aceptados h2{
+		font-size: 2.2rem;
+	}
+
+	.publicacionesindex .card{
+	margin: 0 4rem 2rem;}
+
+	.publicacionesimg {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+}
+
+	.card-title{
+		font-size: 2rem;
+		text-align: left;
+	}
+	.card-body{
+		font-size: 1.3rem;
+	}
+	.nombrearticulo{
+	font-size: 2.3rem;
+	text-align: left;
+}
+	.reply{
+		text-align: left;
+		font-size: 2rem;
+	}
+	.convocatoria{
+		font-size: 1.2rem;
+		padding: 1.5rem 2.5rem;
+	}
+	.convocatoria h2{
+		font-size: 1.8rem;
+	}
+	.forms{
+	padding: 0 3rem;
+	}
+
+	footer{
+		font-size: 1.3rem;
+	}
+	.modaltitulos{
+		font-size: 2rem;
+	}
+
+	.modaltitle{
+		font-size: 1.8rem;
+	}
+
+	.modalul{
+		font-size:1.5rem;
+	}
+}
+

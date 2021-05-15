@@ -1,0 +1,493 @@
+
+
+/*NAV*/
+
+.navbar{
+	background-color:  #2f3360;
+	color: white;
+	font-size: 1.3rem;
+	font-family: 'Harmattan', sans-serif;
+}
+
+
+.dropdown-menu{
+	background-color:  white;
+	color: white;
+	font-size: 1.3rem;
+	font-family: 'Harmattan', sans-serif;
+}
+
+.dropdown-menu .dropdown-item:hover{
+	background-color:  #2f3360;
+	color:white;
+	font-size: 1.3rem;
+	font-family: 'Harmattan', sans-serif;
+}
+
+.nav-link{
+	margin-left: 1rem;
+}
+
+/*TERMINA NAV*/
+
+/*CAROUSEL*/
+
+.carousel-item{
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 70vh;
+  width: 100vw;
+}
+
+.s1{
+  background-image: url(../img/c1.jpg);
+}
+.s2{
+ background-image: url(../img/c2.jpg);
+}
+.s3{
+ background-image: url(../img/c3.jpg);
+}
+
+.carousel-caption{
+  background-color: rgba(0,0,0,.5);
+  top:20%;
+}
+
+.carousel h1{
+  font-family: 'Staatliches', cursive;
+  letter-spacing: .3em;
+}
+
+.carousel h5{
+  font-family: 'Staatliches', cursive;
+  letter-spacing: .2em;
+  color: #e7c810;
+}
+
+.carousel h6{
+  font-family: 'Staatliches', cursive;
+  letter-spacing: .2em;
+  color: white;
+}
+
+/*TERMINA CAROUSEL*/
+
+/*INDEX*/
+
+.titulos{
+	text-align: center;
+	font-family: 'Staatliches', cursive;
+}
+
+.card-text{
+	text-align: justify;
+}
+
+.creditos{
+	text-align: center;
+}
+
+.creditosrow{
+	margin: 1.5rem 0 1rem;
+}
+
+.card-title{
+	font-size: 2rem;
+	text-align: center;
+}
+
+.card-body{
+	align-content: center;
+	text-align: center;
+	font-family: 'Harmattan', sans-serif;
+}
+
+.btn-publicacion{
+	background-color:#e54e21;
+	border-style:solid;
+	border-color: #e54e21;
+	border-width: 2px;
+	color: white;
+}
+.btn-publicacion:hover{
+	background-color: white;
+	border-style:solid;
+	border-color: #e54e21;
+	border-width: 2px;
+	color: #e54e21;
+}
+
+
+
+/*TERMINA INDEX*/
+
+
+/*PUBLICACIONES*/
+
+.left{
+	text-align: left;
+}
+
+.search{
+	font-family: 'Harmattan', sans-serif;
+}
+
+.titulopublicaciones{
+	text-align: center;
+	font-family: 'Staatliches', cursive;
+	margin-top: 1rem;
+}
+
+.pagination{
+	color: black;
+}
+
+.nombrearticulo{
+	text-align: left;
+	font-family: 'Staatliches', cursive;
+}
+
+.articulocompleto{
+	padding: 1.5rem 1.5rem 1.5rem 1rem;
+}
+
+.textopublicacion{
+	font-family: 'Harmattan', sans-serif;
+	text-align: justify;
+	line-height: 120%;
+}
+
+.creditoscompleto{
+	padding: 0;
+	margin: 0;
+}
+
+.reply{
+	font-family: 'Staatliches', cursive;
+	text-align: left;
+}
+
+.replycontainer{
+	margin-bottom: 2rem;
+}
+
+/*./PUBLICACIONES*/
+
+/*CURSOS*/
+.promocion{
+	text-align: center;
+	font-family: 'Staatliches', cursive;
+	width: 100%;
+	margin: 2rem 0;
+	padding: 0 1.5rem
+}
+
+.glow {
+	width: 100%;
+	padding: 0rem;
+	text-align: center;
+  font-size: 2.5rem;
+  color: white;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 15px #fff, 0 0 20px #fff, 0 0 15px #7C96A8, 0 0 20px  #7C96A8, 0 0 25px #7C96A8, 0 0 30px  #7C96A8, 0 0 40px  #7C96A8;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #2f3360, 0 0 40px #2f3360, 0 0 50px #2f3360, 0 0 60px #2f3360, 0 0 70px #2f3360, 0 0 80px #2f3360;
+  }
+}
+
+.tabscursos{
+	padding-top: 1rem;
+}
+
+.tab-content{
+	padding-top: 1.5rem;
+}
+
+.nav-link{
+	font-size: 1.3rem;
+	font-family: 'Harmattan', sans-serif;
+	color: white;
+	background-color:  #2f3360;
+}
+
+.jumbotron{
+	padding: .5rem .2rem;
+}
+
+.jumbotron, .jumbotron li{
+	font-size: 1.3rem;
+	font-family: 'Harmattan', sans-serif;
+}
+.jumbotron li{
+	text-align: justify;
+}
+
+.jumbotron h5{
+	font-family: 'Harmattan', sans-serif;
+	font-size: 1.8rem;
+	font-weight: bold;
+	padding-top: 1.5rem;
+	padding-bottom: 1rem;
+}
+
+.btn-danger{
+	margin: 0;
+	padding: 0px;
+	width: 13%;
+	float: right;
+	/*border-radius: 50%;*/
+}
+.btn-danger:hover{
+	margin: 0;
+	padding: 0px;
+	width: 15%;
+	float: right;
+}
+
+.waste{
+	width: 100%;
+	height: auto;
+}
+
+.modal-content{
+	padding: 1.5rem;
+}
+
+.modaltitulos{
+	font-family: 'Staatliches', cursive;
+}
+
+.modaltitle{
+	font-family: 'Harmattan', sans-serif;
+	font-weight: bold;
+}
+
+.modalul{
+	font-family: 'Harmattan', sans-serif;
+}
+
+.btn-modal{
+	width: 100%;
+	font-size: 2rem;
+	font-family: 'Harmattan', sans-serif;
+	margin-bottom: .5rem;
+	line-height: 110%;
+	color: black;
+}
+.btn-modal:hover{
+	color: white;
+}
+
+.modalrow{
+	border-color: black;
+	border-style: solid;
+	border-width: 3px;
+	padding: 0;
+	margin: 0 0 1rem 0;
+}
+
+.settings-tab{
+	color: white;
+	font-family: 'Harmattan', sans-serif;
+}
+
+.img-modal{
+	height: 90%; 
+	background-color: white;
+}
+
+.close-modal{
+	background-color: white;
+}
+
+
+/*./CURSOS*/
+
+
+/*CONVOCATORIA*/
+.convocatoria{
+	font-family: 'Harmattan', sans-serif;
+	line-height: 100%;
+	text-align: justify;
+}
+
+.convocatoria h2{
+	font-weight: bold;
+}
+
+.pasos>li{
+	margin-bottom: 0;
+	line-height: 50%;
+}
+
+.download{
+	margin: 0;
+	padding: 0px;
+	height: 25px;
+	float: right;
+	/*border-radius: 50%;*/
+}
+
+.convlist{
+	vertical-align: center;
+	font-weight: bold;
+}
+
+.titulos-aceptados{
+	text-align: center;
+	font-family: 'Staatliches', cursive;
+	padding: 0;
+	color: white;
+}
+
+.titulos-aceptados>a>h2{
+	padding: .3rem 1rem 0;
+	color: white;
+}
+
+.center{
+	text-align: center;
+	margin: 0 0 2rem 0;
+}
+
+/* ./CONVOCATORIA */
+
+/*FAQ*/
+
+.faq{
+	margin-top: 1.5rem;
+	padding: 1.5rem .5 1.5rem .5;
+	text-align: justify;
+}
+.titulofaq{
+	text-align: left;
+	font-family: 'Staatliches', cursive;
+}
+.faqh2{
+	padding-top: .5rem;
+	font-weight: 550;
+}
+
+#tel{
+	padding-left: 1rem;
+}
+/* .FAQ*/
+
+/*SESIONES*/
+
+.forms h6{
+	font-family: 'Harmattan', sans-serif;
+}
+
+.forms .form-control{
+	margin-bottom: .5rem;
+}
+
+.reg{
+	color: black;
+}
+.reg:hover{
+	color: green;
+}
+
+.registro{
+	font-family: 'Harmattan', sans-serif;
+}
+.registro .form-control{
+	margin-bottom: .5rem;
+}
+
+.colorgraph {
+  height: 5px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+ 
+}
+
+.imagePreview {
+    background-position: center center;
+  background:url(http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg);
+  background-color:#fff;
+    background-size: cover;
+  background-repeat:no-repeat;
+    display: inline-block;
+  box-shadow:0px -3px 6px 2px rgba(0,0,0,0.2);
+}
+.imgUp
+{
+  margin-bottom:2rem;
+}
+
+
+.btn-img{
+	font-size: 1.3rem;
+	font-family: 'Harmattan', sans-serif;	
+}
+
+
+/* ./SESIONES */
+
+/*PERFIL*/
+.perf{
+	margin-top: 2rem;
+}
+.perfil{
+	margin-top: 2rem;
+}
+
+.perfil p{
+	text-align: justify;
+}
+
+.perfil h1{
+	text-align: left;
+	font-family: 'Staatliches', cursive;
+}
+
+.olvidar .form-group{
+	width: 100%;
+}
+
+.olvidar{
+	padding: 1rem 10vw;
+}
+/* ./PERFIL */
+
+/*FOOTER*/
+footer{
+	padding: 1rem;
+	background-color: #2f3360;
+	color: #e7c810;
+	font-family: 'Harmattan', sans-serif;
+	text-align: center;	
+}
+
+/*.footercomplete{
+	position: absolute;
+  bottom: 0;
+  width: 100%;
+}*/
+
+.copyright{
+	background-color: black;
+	font-family: 'Harmattan', sans-serif;
+	text-align: center;
+	padding: 1rem;
+	color: white;
+}
+
+.iconos{
+	margin: 0 .5rem;
+}
+
+/*TERMINA FOOTER*/
