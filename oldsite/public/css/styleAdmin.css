@@ -1,0 +1,14 @@
+header, main, footer {
+    padding-left: 240px;
+}
+
+.side-nav .collapsible-body li.active, 
+.side-nav.fixed .collapsible-body li.active {
+    background-color: #D1191F;
+}
+
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+}
